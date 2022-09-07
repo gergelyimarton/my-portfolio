@@ -78,6 +78,10 @@
   padding-top: 100px;
   font-size: 32px;
   color: #DADADA;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 

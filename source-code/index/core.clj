@@ -1,30 +1,36 @@
-(ns my-portfolio.handler
+(ns index.core
   (:require
    [reitit.ring :as reitit-ring]
-   [my-portfolio.middleware :refer [middleware]]
    [hiccup.page :refer [include-js include-css html5]]
-   [config.core :refer [env]]))
+   [ring.middleware.defaults :refer [site-defaults wrap-defaults]]))
+
+(def middleware
+  [#(wrap-defaults % site-defaults)])
 
 (def mount-target
-  [:div#app
-   [:h2 "Welcome to My portfolio"]
-   [:p "please wait while Figwheel/shadow-cljs is waking up ..."]
-   [:p "(Check the js console for hints if nothing exciting happens.)"]])
+  [:div#app])
 
 (defn head []
   [:head
+   [:title "Wizard"]
    [:meta {:charset "utf-8"}]
-   [:meta {:name "viewport"
-           :content "width=device-width, initial-scale=1"}]
-   (include-css (if (env :dev) "/css/site.css" "/css/site.min.css"))])
+   [:link {:rel "icon"
+           :type "image/png"
+           :href "/images/favicon.png"}]
+   (include-css "/css/site.css")
+   (include-css "https://fonts.googleapis.com/icon?family=Material+Icons")
+   (include-css "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0")])
 
 (defn loading-page []
   (html5
    (head)
    [:body {:class "body-container"}
     mount-target
-    ;(include-js "https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js")   <---- itt a parallax
-    (include-js "/js/app.js")]))
+    (include-js "https://murdad.github.io/ffontsloader/dist/fontsloader.js")
+    (include-js "/external-js/detect-provider.min.js")
+    (include-js "/external-js/web3.min.js")
+    (include-js "/js/core/app.js")]))
+
 
 
 (defn index-handler
