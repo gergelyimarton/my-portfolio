@@ -9,8 +9,8 @@
 
 (defn -main
   [& [port :as args]]
-  (run-jetty #'app {:port 3000 :join? false})
-  (println "project-emulator - Server started"))  
+  (run-jetty #'app {:port 3449 :join? false})
+  (println "project-emulator - Server started"))
 
 
 (defn dev

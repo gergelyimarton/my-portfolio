@@ -1,7 +1,7 @@
-(ns portfolio.home
+(ns my-portfolio.home
   (:require
-   ["react-parallax" :default Parallax]
-   [reagent.core :as reagent :refer [atom]]))
+    ["react-parallax" :refer [Parallax]]
+    [reagent.core :as reagent :refer [atom]]))
 
 
 
@@ -19,10 +19,7 @@
 
 (defn view []
   [:div.base
-   [:> Parallax {:blur 10
-                 :bgImage "/images/clouds.jpg"
-                 :bgImageAlt "the cat"
-                 :strength 200}]
+   
 
    [:div.home
     [:div.title "hello friend!"]
