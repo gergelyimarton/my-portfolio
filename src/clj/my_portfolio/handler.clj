@@ -7,7 +7,7 @@
 
 (def mount-target
   [:div#app
-   [:h2 "Welcome to my-portfolio"]
+   [:h2 "Welcome to My portfolio"]
    [:p "please wait while Figwheel/shadow-cljs is waking up ..."]
    [:p "(Check the js console for hints if nothing exciting happens.)"]])
 
@@ -23,6 +23,7 @@
    (head)
    [:body {:class "body-container"}
     mount-target
+    ;(include-js "https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js")   <---- itt a parallax
     (include-js "/js/app.js")]))
 
 

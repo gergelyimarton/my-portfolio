@@ -4,4 +4,4 @@
 
 
 (defn view []
-  [:div "hello"])
+  [:div])
