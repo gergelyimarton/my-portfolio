@@ -23,13 +23,93 @@
   height: 100vh;
 }
 
+/* ------------------- left card properties -------------------- */
+
+.my-skills{
+  color: #5f252599;
+  font-size: 33px;
+  height: 40px;
+  width: 150px;
+  padding-left: 50px;
+}
+
+.inner-text{
+  color: #dadada;
+  height: 230px;
+  width: 650px;
+  font-size: 28px;
+  line-height: 32px;
+}
+
+
+.button-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  height: 100px;
+  width: 100px;
+
+  border-radius: 100%;
+  background-color: rgba(255, 255, 255, 0.03);
+  box-shadow: 4px 4px 50px 10px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+
+  cursor: pointer;
+  transition: 1s ease;
+  transform: scale(1);
+}
+
+.button-left:hover{
+  background-color: rgba(255, 255, 255, 0.70);
+  transform: scale(1.1);
+  transition: 1s ease;
+
+}
+
+.button-left:active{
+  transform: scale(0.9);
+  transition: 0.1s ease;
+}
+
+
+
+.card{
+  height: 300px;
+  width: 750px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 71px;
+  background-color: rgba(255, 255, 255, 0.03);
+  box-shadow: 4px 4px 50px 10px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+}
+
+
+.left-card-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 100px;
+  padding-right: 310px;
+
+  display: flex;
+  align-items: center;
+}
+
+
+
 /* ------------------- right card properties -------------------- */
 
 .about-me{
   color: #5f252599;
-  font-size: 30px;
-  height: 40px;
-  width: 190px;
+  font-size: 33px;
+  height: 20px;
+  width: 170px;
 }
 
 .inner-text{
@@ -97,11 +177,18 @@
   padding-left: 310px;
 
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: center;
 }
+/* ------------------- card container -------------------- */
 
+.card-container{
+  /* height: 2000px; */
+  padding-top: 380px;
+
+  display: grid;
+  grid-template-rows: : repeat(4, 400px);
+  gap: 380px;
+}
 
 /* ------------------- title properties -------------------- */
 
