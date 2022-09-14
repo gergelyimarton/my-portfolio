@@ -24,26 +24,57 @@
 }
 
 /* ------------------- right card properties -------------------- */
-.button-right {
 
+.about-me{
+  color: #5f252599;
+  font-size: 30px;
+  height: 40px;
+  width: 190px;
+}
+
+.inner-text{
+  color: #dadada;
+  height: 230px;
+  width: 650px;
+  font-size: 28px;
+  line-height: 32px;
+}
+
+
+.button-right {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 
-  height: 120px;
-  width: 120px;
+  height: 100px;
+  width: 100px;
 
   border-radius: 100%;
   background-color: rgba(255, 255, 255, 0.03);
   box-shadow: 4px 4px 50px 10px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(10px);
 
+  cursor: pointer;
+  transition: 1s ease;
+  transform: scale(1);
+}
+
+.button-right:hover{
+  background-color: rgba(255, 255, 255, 0.70);
+  transform: scale(1.1);
+  transition: 1s ease;
+
+}
+
+.button-right:active{
+  transform: scale(0.9);
+  transition: 0.1s ease;
 }
 
 
 
-.about-me-text{
+.card{
   height: 300px;
   width: 750px;
 
@@ -59,11 +90,11 @@
 }
 
 
-.right-card {
+.right-card-row {
   display: grid;
   grid-template-columns: 1fr 1fr 2fr;
-  gap: 200px;
-  padding-left: 260px;
+  gap: 100px;
+  padding-left: 310px;
 
   display: flex;
   flex-direction: row;
