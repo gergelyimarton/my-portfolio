@@ -22,17 +22,79 @@
   width: 100vw;
   height: 100vh;
 }
+/* ------------------- footer -------------------- */
+.footer {
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-/* ------------------- left card properties -------------------- */
+  gap: 360px;
+
+  border-radius: 71px;
+  background-color: rgba(255, 255, 255, 0.03);
+  box-shadow: 4px 4px 50px 10px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+}
+
+.contact-button{
+  cursor: pointer;
+  transition: 1s ease;
+  transform: scale(1);
+}
+
+.contact-button:hover{
+  transform: scale(1.1);
+  transition: 1s ease;
+
+}
+
+.contact-button:active{
+  transform: scale(0.9);
+  transition: 0.1s ease;
+}
+
+
+
+
+/* ------------------- card titles -------------------- */
+
+.my-hobbys{
+  color: #5f252599;
+  font-size: 33px;
+  height: 35px;
+  width: 206px;
+  padding-left: 30px;
+}
+
+
+
+.my-goals{
+  color: #5f252599;
+  font-size: 33px;
+  height: 20px;
+  width: 180px;
+}
+
+
 
 .my-skills{
   color: #5f252599;
   font-size: 33px;
   height: 40px;
-  width: 150px;
-  padding-left: 50px;
+  width: 180px;
+  padding-left: 35px;
 }
 
+
+.about-me{
+  color: #5f252599;
+  font-size: 33px;
+  height: 20px;
+  width: 185px;
+}
+
+/* ------------------- left card properties -------------------- */
 .inner-text{
   color: #dadada;
   height: 230px;
@@ -104,14 +166,6 @@
 
 
 /* ------------------- right card properties -------------------- */
-
-.about-me{
-  color: #5f252599;
-  font-size: 33px;
-  height: 20px;
-  width: 170px;
-}
-
 .inner-text{
   color: #dadada;
   height: 230px;
@@ -174,7 +228,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 2fr;
   gap: 100px;
-  padding-left: 310px;
+  padding-left: 360px;
 
   display: flex;
   align-items: center;
@@ -184,9 +238,10 @@
 .card-container{
   /* height: 2000px; */
   padding-top: 380px;
+  padding-bottom: 40px;
 
   display: grid;
-  grid-template-rows: : repeat(4, 400px);
+  grid-template-rows: : repeat(5, 400px);
   gap: 380px;
 }
 
