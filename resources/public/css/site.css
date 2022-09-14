@@ -2,8 +2,6 @@
 
 
 .body-container {
-
-
   /* background-image: url('/images/background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -11,9 +9,6 @@
   /* backdrop-filter: blur(10px);
   margin-bottom: 0px;
   padding: 10px; */
-
-
-
   font-family: 'Montserrat', Arial, sans-serif;
   color: black;
   line-height: 1.8em;
@@ -28,6 +23,57 @@
   height: 100vh;
 }
 
+/* ------------------- right card properties -------------------- */
+.button-right {
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  height: 120px;
+  width: 120px;
+
+  border-radius: 100%;
+  background-color: rgba(255, 255, 255, 0.03);
+  box-shadow: 4px 4px 50px 10px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+
+}
+
+
+
+.about-me-text{
+  height: 300px;
+  width: 750px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 71px;
+  background-color: rgba(255, 255, 255, 0.03);
+  box-shadow: 4px 4px 50px 10px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+}
+
+
+.right-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  gap: 200px;
+  padding-left: 260px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* ------------------- title properties -------------------- */
+
 .max-width-container {
   max-width: 1200px;
   margin: auto;
@@ -39,7 +85,7 @@
 
 
 .title{
-  padding-top: 300px;
+  padding-top: 360px;
   font-size: 128px;
   color: #DADADA;
 }
@@ -50,7 +96,10 @@
   font-size: 32px;
   color: #DADADA;
   line-height: 40px;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 

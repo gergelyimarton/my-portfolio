@@ -12,7 +12,7 @@
 
 (defn head []
   [:head
-   [:title "Wizard"]
+   [:title "hello"]
    [:meta {:charset "utf-8"}]
    [:link {:rel "icon"
            :type "image/png"
