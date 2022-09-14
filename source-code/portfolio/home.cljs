@@ -14,7 +14,7 @@
 (defn arrow-forward []
   [:img {:src "/images/arrow_forward.svg"
               :style {
-                      :padding-left "20px"
+                      :padding-left "10px"
                       :height "70px"
                       :width "70px"}}])
 
