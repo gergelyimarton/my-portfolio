@@ -1,4 +1,6 @@
 (ns portfolio.home
+
+
   (:require
    ["react-parallax" :refer (Parallax)]
    [reagent.core :as reagent :refer [atom]]))
@@ -52,7 +54,7 @@
 (defn view []
   [:> Parallax {:bgImage "/images/clouds.jpg"
                 :bgImageAlt "the cat"
-                :strength 1100}
+                :strength 1500}
 
     [:div.max-width-container
      [:div.title "hello friend!"]
@@ -64,28 +66,28 @@
       [:div.right-card-row
        [:div.button-right
         [arrow-back]]
-       [:div.about-me "ABOUT ME"]
+       [:div.about-me {:class ["title-shadow"]} "ABOUT ME"]
        [:div.card
         [:div.inner-text "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]]]
 ;;------------------- my skills -----------------------------
       [:div.left-card-row
        [:div.card
         [:div.inner-text "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]]
-       [:div.my-skills "MY SKILLS"]
+       [:div.my-skills {:class ["title-shadow"]} "MY SKILLS"]
        [:div.button-left
         [arrow-forward]]]
 ;;------------------- my goals -----------------------------
       [:div.right-card-row
        [:div.button-right
         [arrow-back]]
-       [:div.my-goals "MY GOALS"]
+       [:div.my-goals {:class ["title-shadow"]} "MY GOALS"]
        [:div.card
         [:div.inner-text "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]]]
 ;;------------------- my hobbys -----------------------------
       [:div.left-card-row
        [:div.card
         [:div.inner-text "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]]
-       [:div.my-hobbys "MY HOBBYS"]
+       [:div.my-hobbies {:class ["title-shadow"]} "MY HOBBIES"]
        [:div.button-left
         [arrow-forward]]]
 ;;------------------- contacts footer -----------------------------
