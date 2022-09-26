@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 
+
+
+/* -------------------*/
+
+
+
 .body-container {
   /* background-image: url('/images/background.jpg');
   background-size: cover;
@@ -306,26 +312,6 @@
      }
 }
 
-/* ------------------- @media -------------------- */
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  .example-card {
-    background: #bada55;
-  }
-}
-
-@media only screen and (min-device-width: 480px) and (max-device-width: 900px) {
-  .example-card {
-    background: #fff;
-  }
-}
-
-@media only screen and (min-device-width: 900px) and (max-device-width: 1500px) {
-  .example-card {
-    background: #000;
-  }
-}
-
-
 
 /*------------------------*/
 h1, h2, h3 {
@@ -350,4 +336,24 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+
+/* ------------------- @media -------------------- */
+@media screen and (min-width: 320px) and (min-width: 480px) {
+  .example-card {
+    background: #bada55;
+  }
+}
+
+@media screen and (min-width: 480px) and (min-width: 900px) {
+  .example-card {
+    background: #fff;
+  }
+}
+
+@media screen and (min-width: 900px) and (min-width: 1500px) {
+  .example-card {
+    background: #000;
+  }
 }
