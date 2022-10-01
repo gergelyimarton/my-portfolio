@@ -6,7 +6,6 @@
    [reagent.core :as reagent :refer [atom]]))
 
 
-
 ;;------------------- button arrows -----------------------------
 (defn arrow-back []
   [:img {:src "/images/arrow_back.svg"
@@ -21,6 +20,7 @@
                       :padding-left "10px"
                       :height "70px"
                       :width "70px"}}])
+
 
 ;;------------------- footer images -----------------------------
 
@@ -48,6 +48,48 @@
                                      :height "110px"
                                      :width "110px"}}])
 
+;;------------------- footer -----------------------------
+(defn footer []
+  [:div.footer
+   [github]
+   [instagram]
+   [soundcloud]
+   [youtube]])
+;;------------------- right card -----------------------------
+(defn right-card [title description]
+   [:div.right-card-row
+    [:div.button-right
+     [arrow-back]]
+    [:div.about-me {:class ["title-shadow"]} title]
+    [:div.card
+     [:div.inner-text description]]])
+
+;;------------------- left card -----------------------------
+(defn left-card [title description]
+  [:div.left-card-row
+   [:div.card
+    [:div.inner-text description]]
+   [:div.my-skills {:class ["title-shadow"]} title]
+   [:div.button-left
+    [arrow-forward]]])
+
+;;------------------- mobile card container -----------------------------
+(defn mobile-card-container []
+  [:div])
+
+
+;;------------------- card container -----------------------------
+(defn card-container []
+  [:div.card-container
+   [right-card "ABOUT ME" "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]
+   [left-card "MY SKILLS" "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]
+   [right-card "MY GOALS" "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]
+   [left-card "MY HOBBIES" "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]
+
+   ;;------------------- contacts footer -----------------------------
+   [footer]])
+
+
 
 ;;/////////////// home page architecture /////////////////////////////////////////
 
@@ -56,43 +98,11 @@
                 :bgImageAlt "the cat"
                 :strength 1500}
 
+
+;;------------------- title properties -----------------------------
     [:div.max-width-container
      [:div.title "hello friend!"]
      [:div.subtitle
       [:div "My name is Marci"]
       [:div "and this is my portfolio project!"]]
-     [:div.card-container
-;;------------------- about me -----------------------------
-      [:div.right-card-row
-       [:div.button-right
-        [arrow-back]]
-       [:div.about-me {:class ["title-shadow"]} "ABOUT ME"]
-       [:div.card
-        [:div.inner-text "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]]]
-;;------------------- my skills -----------------------------
-      [:div.left-card-row
-       [:div.card
-        [:div.inner-text "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]]
-       [:div.my-skills {:class ["title-shadow"]} "MY SKILLS"]
-       [:div.button-left
-        [arrow-forward]]]
-;;------------------- my goals -----------------------------
-      [:div.right-card-row
-       [:div.button-right
-        [arrow-back]]
-       [:div.my-goals {:class ["title-shadow"]} "MY GOALS"]
-       [:div.card
-        [:div.inner-text "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]]]
-;;------------------- my hobbys -----------------------------
-      [:div.left-card-row
-       [:div.card
-        [:div.inner-text "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]]
-       [:div.my-hobbies {:class ["title-shadow"]} "MY HOBBIES"]
-       [:div.button-left
-        [arrow-forward]]]
-;;------------------- contacts footer -----------------------------
-      [:div.footer
-       [github]
-       [instagram]
-       [soundcloud]
-       [youtube]]]]])
+     [card-container]]])
