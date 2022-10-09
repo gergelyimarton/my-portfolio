@@ -22,6 +22,13 @@
                       :width "70px"}}])
 
 
+(defn mobile-button []
+  [:img {:src "/images/more_horizontal.svg"
+              :style {
+                      :height "70px"
+                      :width "70px"}}])
+
+
 ;;------------------- footer images -----------------------------
 
 (defn github []
@@ -60,7 +67,7 @@
    [:div.right-card-row
     [:div.button-right
      [arrow-back]]
-    [:div.about-me {:class ["title-shadow"]} title]
+    [:div.right-card-title {:class ["title-shadow"]} title]
     [:div.card
      [:div.inner-text description]]])
 
@@ -69,14 +76,9 @@
   [:div.left-card-row
    [:div.card
     [:div.inner-text description]]
-   [:div.my-skills {:class ["title-shadow"]} title]
+   [:div.left-card-title {:class ["title-shadow"]} title]
    [:div.button-left
     [arrow-forward]]])
-
-;;------------------- mobile card container -----------------------------
-(defn mobile-card-container []
-  [:div])
-
 
 ;;------------------- card container -----------------------------
 (defn card-container []
@@ -85,11 +87,22 @@
    [left-card "MY SKILLS" "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]
    [right-card "MY GOALS" "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]
    [left-card "MY HOBBIES" "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]
-
-   ;;------------------- contacts footer -----------------------------
+;;------------------- contacts footer -----------------------------
    [footer]])
 
+;;------------------- mobile card -----------------------------
+(defn mobile-card [title description]
+  [:div.mobile-card-row                                      ;; css létrhozni
+   [:div.mobile-card-title {:class ["title-shadow"]} title]  ;; css létrhozni
+   [:div.mobile-card                                         ;; css létrhozni
+    [:div.mobile-inner-text description]]                    ;; css létrhozni
+   [:div.mobile-button                                       ;; css létrhozni
+    [mobile-button]]])                                        ;; funkciót létrhozni + ikon
 
+;;------------------- mobile card container -----------------------------
+(defn mobile-card-container []
+  [:div.mobile-card-container
+   [mobile-card "ABOUT ME" "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]])
 
 ;;/////////////// home page architecture /////////////////////////////////////////
 
@@ -105,4 +118,5 @@
      [:div.subtitle
       [:div "My name is Marci"]
       [:div "and this is my portfolio project!"]]
+     [mobile-card-container]
      [card-container]]])
