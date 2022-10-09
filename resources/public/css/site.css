@@ -39,13 +39,10 @@
   align-items: center;
   justify-content: center;
 }
-
-
-
 .mobile-card-title{
   font-size: 28px;
+  padding-bottom: 10px;
 }
-
 .mobile-card{
   height: 320px;
   width: 220px;
@@ -58,20 +55,15 @@
   box-shadow: 4px 4px 50px 10px rgb(0 0 0 / 25%);
   backdrop-filter: blur(10px);
 }
-
-
 .mobile-inner-text{
   color: #dadada;
   height: 280px;
   width: 180px;
   font-size: 15px;
   line-height: 20px;
+  text-shadow: 2px 2px 3px rgb(0 0 0 / 70%);
+  text-align: center;
 }
-
-
-
-
-
 .mobile-button {
   display: flex;
   flex-direction: row;
@@ -90,112 +82,63 @@
   cursor: pointer;
   transition: 1s ease;
   transform: scale(1);
+
+  -webkit-tap-highlight-color: transparent;
 }
-
-/* .mobile-button:hover {
-  background-color: rgba(255, 255, 255, 0.70);
-  transform: scale(1.1);
-  transition: 1s ease;
-} */
-
 .mobile-button:active {
   transform: scale(0.9);
   transition: 0.1s ease;
   background-color: rgba(255, 255, 255, 0.70);
 }
-
-
-
-
 /* ------------------- footer -------------------- */
+.contact-button {
+  height: 100px;
+  width: 100px;
+}
 .footer {
-  height: 140px;
+  margin: 0px 10px;
+  padding: 10px;
   display: flex;
   align-items: center;
-  justify-content: center;
-
-  gap: 360px;
-
+  justify-content: space-between;
   border-radius: 71px;
   background-color: rgba(255, 255, 255, 0.03);
-  box-shadow: 4px 4px 50px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: rgb(0 0 0 / 25%) 4px 4px 50px 10px;
   backdrop-filter: blur(10px);
 }
-
 .contact-button{
   cursor: pointer;
   transition: 1s ease;
   transform: scale(1);
 }
-
 .contact-button:hover{
   transform: scale(1.1);
   transition: 1s ease;
 
 }
-
 .contact-button:active{
   transform: scale(0.9);
   transition: 0.1s ease;
 }
-
-
-
-
 /* ------------------- card titles -------------------- */
-
-/*--- title shadow ---*/
 .title-shadow{
   text-shadow: 5px 5px 5px rgba(0,0,0,0.3);
 }
-/*-------------------*/
-
-/* .my-hobbies{
-  color: #5f252599;
-  font-size: 33px;
-  height: 35px;
-  width: 206px;
-  padding-left: 20px;
-  white-space: nowrap;
-}
-
-
-
-.my-goals{
-  color: #5f252599;
-  font-size: 33px;
-  height: 20px;
-  width: 180px;
-}
- */
-
-
 .left-card-title{
   color: #5f252599;
   font-size: 33px;
-  height: 40px;
-  width: 180px;
-  padding-left: 35px;
+  padding-left: 50px;
+  padding-right: 50px;
+  white-space: nowrap;
 }
-
-
 .right-card-title{
   color: #5f252599;
   font-size: 33px;
-  height: 20px;
-  width: 185px;
+  padding-left: 50px;
+  padding-right: 50px;
+  white-space: nowrap;
 }
-
 /* ------------------- left card properties -------------------- */
-.inner-text{
-  color: #dadada;
-  height: 230px;
-  width: 650px;
-  font-size: 28px;
-  line-height: 32px;
-}
-
-
 .button-left {
   display: flex;
   flex-direction: row;
@@ -214,59 +157,30 @@
   transition: 1s ease;
   transform: scale(1);
 }
-
 .button-left:hover{
   background-color: rgba(255, 255, 255, 0.70);
   transform: scale(1.1);
   transition: 1s ease;
 
 }
-
 .button-left:active{
   transform: scale(0.9);
   transition: 0.1s ease;
 }
-
-
-
-.card{
-  height: 300px;
-  width: 750px;
-
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 71px;
-  background-color: rgba(255, 255, 255, 0.03);
-  box-shadow: 4px 4px 50px 10px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(10px);
-}
-
-
 .left-card-row {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 100px;
-  padding-right: 310px;
-
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+    padding: 220px 10px;
 }
-
-
-
 /* ------------------- right card properties -------------------- */
 .inner-text{
   color: #dadada;
-  height: 230px;
-  width: 650px;
   font-size: 28px;
   line-height: 32px;
+  padding: 40px;
+  text-shadow: 2px 2px 3px rgb(0 0 0 / 70%);
 }
-
-
 .button-right {
   display: flex;
   flex-direction: row;
@@ -285,25 +199,18 @@
   transition: 1s ease;
   transform: scale(1);
 }
-
 .button-right:hover{
   background-color: rgba(255, 255, 255, 0.70);
   transform: scale(1.1);
   transition: 1s ease;
 
 }
-
 .button-right:active{
   transform: scale(0.9);
   transition: 0.1s ease;
 }
-
-
-
 .card{
-  height: 300px;
-  width: 750px;
-
+  max-height: 800px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -314,32 +221,23 @@
   box-shadow: 4px 4px 50px 10px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(10px);
 }
-
-
 .right-card-row {
-  /* display: grid;
-  grid-template-columns: 1fr 1fr 2fr;
-  gap: 100px; */
-  /* padding-left: 360px; */
-
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  padding: 220px 10px;
 }
 /* ------------------- card container -------------------- */
-
 .card-container{
   /* height: 2000px; */
-  padding-top: 380px;
+  padding-top: 200px;
   padding-bottom: 40px;
 
   /* display: grid;
   grid-template-rows: : repeat(5, 400px);
   gap: 380px; */
 }
-
 /* ------------------- title properties -------------------- */
-
 .max-width-container {
   max-width: 1200px;
   width: 100%;
@@ -349,15 +247,11 @@
   align-items: center;
   justify-content: center;
 }
-
-
 .title{
-  padding-top: 360px;
+  padding-top: 255px;
   font-size: 128px;
   color: #DADADA;
 }
-
-
 .subtitle{
   padding-top: 100px;
   font-size: 32px;
@@ -368,8 +262,6 @@
   align-items: center;
   justify-content: center;
 }
-
-
 /* ------------------- loading screen -------------------- */
 .loading-animation{
   animation: fadeInAnimation ease 3s;
@@ -379,7 +271,6 @@
   opacity: 0;
   filter: blur(10px);
 }
-
 @keyframes fadeInAnimation {
     0% {
         opacity: 0;
@@ -390,8 +281,6 @@
         filter: blur(0px);
      }
 }
-
-
 /*------------------------*/
 h1, h2, h3 {
   color: #000;
@@ -399,31 +288,27 @@ h1, h2, h3 {
 h1 {
   font-size: 2.5em
 }
-
 h2 {
   font-size: 2em
 }
-
 h3 {
   font-size: 1.5em
 }
-
 a {
   text-decoration: none;
   color: #09f;
 }
-
 a:hover {
   text-decoration: underline;
 }
-
-
 /* ------------------- @media -------------------- */
-@media screen and (min-width: 360px) and (max-width: 765px) {
-  .example-card {
-    background: #bada55;
-  }
+@media screen and (min-width: 800px){
 
+  .mobile-card-container{
+    display: none;
+  }
+}
+@media screen and (max-width: 800px) {
   .max-width-container {
     max-width: 360px;
     margin: auto;
@@ -433,12 +318,12 @@ a:hover {
     justify-content: center;
   }
   .title{
-    padding-top: 260px;
+    padding-top: 80px;
     font-size: 50px;
     color: #DADADA;
   }
   .subtitle{
-    padding-top: 100px;
+    padding-top: 60px;
     font-size: 20px;
     color: #DADADA;
     line-height: 30px;
@@ -447,20 +332,19 @@ a:hover {
     align-items: center;
     justify-content: center;
   }
-
-}
-
-
-
-
-@media screen and (min-width: 480px) and (max-width: 900px) {
-  .example-card {
-    background: #fff;
+  .contact-button{
+    height: 45px;
+    width: 45px;
+    padding: 0px 13px;
+    -webkit-tap-highlight-color: transparent;
   }
-}
 
-@media screen and (min-width: 900px) and (max-width: 1500px) {
-  .example-card {
-    background: #000;
+  .footer{
+    margin-top: 80px;
+    margin-bottom: 20px;
+  }
+
+  .card-container{
+    display: none;
   }
 }

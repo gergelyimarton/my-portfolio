@@ -32,28 +32,20 @@
 ;;------------------- footer images -----------------------------
 
 (defn github []
-  [:img.contact-button {:src "/images/github.png"
-                             :style {
-                                     :height "100px"
-                                     :width "100px"}}])
+  [:img.contact-button {:src "/images/github.png"}])
+
 
 (defn instagram []
-  [:img.contact-button {:src "/images/instagram.png"
-                             :style {
-                                     :height "100px"
-                                     :width "100px"}}])
+  [:img.contact-button {:src "/images/instagram.png"}])
+
 
 (defn soundcloud []
-  [:img.contact-button {:src "/images/soundcloud.png"
-                             :style {
-                                     :height "115px"
-                                     :width "115px"}}])
+  [:img.contact-button {:src "/images/soundcloud.png"}])
+
 
 (defn youtube []
-  [:img.contact-button {:src "/images/youtube.png"
-                             :style {
-                                     :height "110px"
-                                     :width "110px"}}])
+  [:img.contact-button {:src "/images/youtube.png"}])
+
 
 ;;------------------- footer -----------------------------
 (defn footer []
@@ -65,8 +57,9 @@
 ;;------------------- right card -----------------------------
 (defn right-card [title description]
    [:div.right-card-row
-    [:div.button-right
-     [arrow-back]]
+    [:div
+     [:div.button-right
+      [arrow-back]]]
     [:div.right-card-title {:class ["title-shadow"]} title]
     [:div.card
      [:div.inner-text description]]])
@@ -77,8 +70,9 @@
    [:div.card
     [:div.inner-text description]]
    [:div.left-card-title {:class ["title-shadow"]} title]
-   [:div.button-left
-    [arrow-forward]]])
+   [:div
+    [:div.button-left
+     [arrow-forward]]]])
 
 ;;------------------- card container -----------------------------
 (defn card-container []
@@ -97,12 +91,17 @@
    [:div.mobile-card                                         ;; css létrhozni
     [:div.mobile-inner-text description]]                    ;; css létrhozni
    [:div.mobile-button                                       ;; css létrhozni
-    [mobile-button]]])                                        ;; funkciót létrhozni + ikon
+    [mobile-button]]])
+                                           ;; funkciót létrhozni + ikon
 
 ;;------------------- mobile card container -----------------------------
 (defn mobile-card-container []
   [:div.mobile-card-container
-   [mobile-card "ABOUT ME" "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]])
+   [mobile-card "ABOUT ME" "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]
+   [mobile-card "MY SKILLS" "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]
+   [mobile-card "MY GOALS" "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]
+   [mobile-card "MY HOBBIES" "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]
+   [footer]])
 
 ;;/////////////// home page architecture /////////////////////////////////////////
 
