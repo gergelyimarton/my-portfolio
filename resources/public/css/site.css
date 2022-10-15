@@ -91,13 +91,9 @@
   background-color: rgba(255, 255, 255, 0.70);
 }
 /* ------------------- footer -------------------- */
-.contact-button {
-  height: 100px;
-  width: 100px;
-}
 .footer {
   margin: 0px 10px;
-  padding: 10px;
+  padding: 15px 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -106,15 +102,21 @@
   box-shadow: rgb(0 0 0 / 25%) 4px 4px 50px 10px;
   backdrop-filter: blur(10px);
 }
+.link{
+  height: 100px;
+  width: 100px;
+}
 .contact-button{
+  height: 100px;
+  width: 100px;
+
   cursor: pointer;
   transition: 1s ease;
-  transform: scale(1);
+  transform: scale(0.9);
 }
 .contact-button:hover{
-  transform: scale(1.1);
-  transition: 1s ease;
-
+  transform: scale(1);
+  transition: 0.5s ease;
 }
 .contact-button:active{
   transform: scale(0.9);
@@ -239,7 +241,7 @@
 }
 /* ------------------- title properties -------------------- */
 .max-width-container {
-  max-width: 1200px;
+  max-width: 1100px;
   width: 100%;
   margin: auto;
   display: flex;
@@ -248,7 +250,7 @@
   justify-content: center;
 }
 .title{
-  padding-top: 255px;
+  padding-top: 150px;
   font-size: 128px;
   color: #DADADA;
 }
@@ -261,6 +263,17 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.itsme-container{
+  height: 150px;
+  width: 150px;
+  padding-top: 50px;
+}
+.itsme{
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+  border: 3px solid #383838;
 }
 /* ------------------- loading screen -------------------- */
 .loading-animation{
@@ -338,13 +351,15 @@ a:hover {
     padding: 0px 13px;
     -webkit-tap-highlight-color: transparent;
   }
-
   .footer{
     margin-top: 80px;
     margin-bottom: 20px;
   }
-
   .card-container{
     display: none;
+  }
+  .contact-button{
+    transition: 1s ease;
+    transform: scale(1);
   }
 }

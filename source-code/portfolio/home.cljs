@@ -6,6 +6,10 @@
    [reagent.core :as reagent :refer [atom]]))
 
 
+(defn its-me []
+  [:img.itsme {:src "/images/itsme.jpg"}])
+
+
 ;;------------------- button arrows -----------------------------
 (defn arrow-back []
   [:img {:src "/images/arrow_back.svg"
@@ -30,30 +34,30 @@
 
 
 ;;------------------- footer images -----------------------------
-
 (defn github []
-  [:img.contact-button {:src "/images/github.png"}])
-
+  [:a.link {:href "https://github.com/gergelyimarton"}
+   [:img.contact-button {:src "/images/github.png"}]])
 
 (defn instagram []
-  [:img.contact-button {:src "/images/instagram.png"}])
-
+  [:a.link {:href "https://www.instagram.com/duplajezus"}
+   [:img.contact-button {:src "/images/instagram.png"}]])
 
 (defn soundcloud []
-  [:img.contact-button {:src "/images/soundcloud.png"}])
-
+  [:a.link {:href "https://on.soundcloud.com/t9DNR"}
+   [:img.contact-button {:src "/images/soundcloud.png"}]])
 
 (defn youtube []
-  [:img.contact-button {:src "/images/youtube.png"}])
-
-
+  [:a.link {:href "https://www.youtube.com/channel/UC97nHE6f-2hy080NdVce3TQ/featured"}
+   [:img.contact-button {:src "/images/youtube.png"}]])
 ;;------------------- footer -----------------------------
 (defn footer []
   [:div.footer
    [github]
-   [instagram]
    [soundcloud]
+   [instagram]
    [youtube]])
+
+
 ;;------------------- right card -----------------------------
 (defn right-card [title description]
    [:div.right-card-row
@@ -86,13 +90,13 @@
 
 ;;------------------- mobile card -----------------------------
 (defn mobile-card [title description]
-  [:div.mobile-card-row                                      ;; css létrhozni
-   [:div.mobile-card-title {:class ["title-shadow"]} title]  ;; css létrhozni
-   [:div.mobile-card                                         ;; css létrhozni
-    [:div.mobile-inner-text description]]                    ;; css létrhozni
-   [:div.mobile-button                                       ;; css létrhozni
+  [:div.mobile-card-row
+   [:div.mobile-card-title {:class ["title-shadow"]} title]
+   [:div.mobile-card
+    [:div.mobile-inner-text description]]
+   [:div.mobile-button
     [mobile-button]]])
-                                           ;; funkciót létrhozni + ikon
+
 
 ;;------------------- mobile card container -----------------------------
 (defn mobile-card-container []
@@ -108,7 +112,7 @@
 (defn view []
   [:> Parallax {:bgImage "/images/clouds.jpg"
                 :bgImageAlt "the cat"
-                :strength 1500}
+                :strength 1800}
 
 
 ;;------------------- title properties -----------------------------
@@ -117,5 +121,6 @@
      [:div.subtitle
       [:div "My name is Marci"]
       [:div "and this is my portfolio project!"]]
+      ; [:div.itsme-container [its-me]]]
      [mobile-card-container]
      [card-container]]])
