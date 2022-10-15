@@ -3,7 +3,7 @@
 
 
 
-/* -------------------*/
+
 
 
 
@@ -30,6 +30,14 @@
 
   overflow-x: hidden;
 }
+/* ------------------- about me page -------------------- */
+.about-me-page-container{
+
+}
+
+
+
+
 
 /* ------------------- mobile card -------------------- */
 .mobile-card-row{
@@ -241,7 +249,7 @@
 }
 /* ------------------- title properties -------------------- */
 .max-width-container {
-  max-width: 1100px;
+  max-width: 1200px;
   width: 100%;
   margin: auto;
   display: flex;

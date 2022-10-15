@@ -5,7 +5,16 @@
    ["react-parallax" :refer (Parallax)]
    [reagent.core :as reagent :refer [atom]]))
 
+;;------------------- atom functions -----------------------------
+(def page (atom :main))
 
+
+(defn change-page [new-page]
+  (reset! page new-page))
+
+
+
+;;-----------------------------
 (defn its-me []
   [:img.itsme {:src "/images/itsme.jpg"}])
 
@@ -107,20 +116,64 @@
    [mobile-card "MY HOBBIES" "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]
    [footer]])
 
+;;------------------- pages (main ect..) -----------------------------
+(defn main-page []
+  [:div.max-width-container
+   [:div.title "hello friend!"]
+   [:div.subtitle
+    [:div "My name is Marci"]
+    [:div "and this is my portfolio project!"]]
+    ; [:div.itsme-container [its-me]]]
+   [mobile-card-container]
+   [card-container]])
+
+
+(defn about-me []
+  [:div.max-width-container
+   [:div.about-me-page-container]])
+
+(defn my-skills []
+  [:div.max-width-container
+   [:div.my-skills-page-container
+    "my-skills"]])
+
+(defn my-goals []
+  [:div.max-width-container
+   [:div.my-goals-page-container
+    "my-goals"]])
+
+(defn my-hobbies []
+  [:div.max-width-container
+   [:div.my-hobbies-page-container
+    "my-hobbies"]])
+
+
+
+
+
+;;------------------- navbar and button -----------------------------
+(defn nav-button [title page]
+  [:button {:on-click #(change-page page)} title])
+
+(defn nav-bar []
+  [:div
+   [nav-button "main" :main]
+   [nav-button "about-me" :about-me]
+   [nav-button "my-skills" :my-skills]
+   [nav-button "my-goals" :my-goals]
+   [nav-button "my-hobbies" :my-hobbies]])
+
 ;;/////////////// home page architecture /////////////////////////////////////////
 
 (defn view []
   [:> Parallax {:bgImage "/images/clouds.jpg"
                 :bgImageAlt "the cat"
-                :strength 1800}
-
-
-;;------------------- title properties -----------------------------
-    [:div.max-width-container
-     [:div.title "hello friend!"]
-     [:div.subtitle
-      [:div "My name is Marci"]
-      [:div "and this is my portfolio project!"]]
-      ; [:div.itsme-container [its-me]]]
-     [mobile-card-container]
-     [card-container]]])
+                :strength 800}
+   [:div [nav-bar]
+    (case @page
+         :main [main-page]
+         :about-me [about-me]
+         :my-skills [my-skills]
+         :my-goals [my-goals]
+         :my-hobbies [my-hobbies]
+         [main-page])]])
