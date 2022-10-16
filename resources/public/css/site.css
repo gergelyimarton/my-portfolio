@@ -32,7 +32,23 @@
 }
 /* ------------------- about me page -------------------- */
 .about-me-page-container{
+  height: 94vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 
+.about-me-page-card{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 71px;
+  background-color: rgba(255, 255, 255, 0.03);
+  box-shadow: 4px 4px 50px 10px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
 }
 
 
@@ -181,15 +197,15 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-    padding: 220px 10px;
+    padding: 200px 10px;
 }
 /* ------------------- right card properties -------------------- */
 .inner-text{
-  color: #dadada;
+  color: #414141;
   font-size: 28px;
   line-height: 32px;
   padding: 40px;
-  text-shadow: 2px 2px 3px rgb(0 0 0 / 70%);
+  text-shadow: 2px 2px 5px rgb(0 0 0 / 20%);
 }
 .button-right {
   display: flex;
@@ -235,7 +251,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 220px 10px;
+  padding: 200px 10px;
 }
 /* ------------------- card container -------------------- */
 .card-container{
@@ -260,17 +276,19 @@
 .title{
   padding-top: 150px;
   font-size: 128px;
-  color: #DADADA;
+  color: #666666;
+  text-shadow: 2px 2px 3px rgb(0 0 0 / 50%);
 }
 .subtitle{
   padding-top: 100px;
   font-size: 32px;
-  color: #DADADA;
+  color: #666666;
   line-height: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-shadow: 2px 2px 3px rgb(0 0 0 / 50%);
 }
 .itsme-container{
   height: 150px;
@@ -342,6 +360,7 @@ a:hover {
     padding-top: 80px;
     font-size: 50px;
     color: #DADADA;
+    text-shadow: 2px 2px 3px rgb(0 0 0 / 70%);
   }
   .subtitle{
     padding-top: 60px;
@@ -352,6 +371,7 @@ a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-shadow: 2px 2px 3px rgb(0 0 0 / 70%);
   }
   .contact-button{
     height: 45px;

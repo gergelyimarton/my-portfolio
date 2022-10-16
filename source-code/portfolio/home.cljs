@@ -130,7 +130,10 @@
 
 (defn about-me []
   [:div.max-width-container
-   [:div.about-me-page-container]])
+   [:div.about-me-page-container
+    [:div.about-me-page-card
+     [:div.inner-text "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]]
+    [:button "next"]]])
 
 (defn my-skills []
   [:div.max-width-container
@@ -166,7 +169,7 @@
 ;;/////////////// home page architecture /////////////////////////////////////////
 
 (defn view []
-  [:> Parallax {:bgImage "/images/clouds.jpg"
+  [:> Parallax {:bgImage "/images/Cloudy.svg"
                 :bgImageAlt "the cat"
                 :strength 800}
    [:div [nav-bar]
@@ -176,4 +179,4 @@
          :my-skills [my-skills]
          :my-goals [my-goals]
          :my-hobbies [my-hobbies]
-         [main-page])]])
+         [about-me])]])
