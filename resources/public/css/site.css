@@ -34,12 +34,68 @@
 .about-me-page-container{
   height: 94vh;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-
 .about-me-page-card{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 71px;
+  background-color: rgba(255, 255, 255, 0.03);
+  box-shadow: 4px 4px 50px 10px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+}
+/* ------------------- my skills page -------------------- */
+.my-skills-page-container{
+  height: 94vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.my-skills-page-card{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 71px;
+  background-color: rgba(255, 255, 255, 0.03);
+  box-shadow: 4px 4px 50px 10px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+}
+/* ------------------- my goals page -------------------- */
+.my-goals-page-container{
+  height: 94vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.my-goals-page-card{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 71px;
+  background-color: rgba(255, 255, 255, 0.03);
+  box-shadow: 4px 4px 50px 10px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+}
+/* ------------------- my hobbies page -------------------- */
+.my-hobbies-page-container{
+  height: 94vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.my-hobbies-page-card{
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -53,8 +109,6 @@
 
 
 
-
-
 /* ------------------- mobile card -------------------- */
 .mobile-card-row{
   padding-top: 100px;
@@ -64,6 +118,7 @@
   justify-content: center;
 }
 .mobile-card-title{
+  color: #5f252599;
   font-size: 28px;
   padding-bottom: 10px;
 }
@@ -80,12 +135,12 @@
   backdrop-filter: blur(10px);
 }
 .mobile-inner-text{
-  color: #dadada;
+  color: #1F1F1F;
   height: 280px;
   width: 180px;
   font-size: 15px;
   line-height: 20px;
-  text-shadow: 2px 2px 3px rgb(0 0 0 / 70%);
+  text-shadow: 2px 2px 3px rgb(0 0 0 / 20%);
   text-align: center;
 }
 .mobile-button {
@@ -197,11 +252,11 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-    padding: 200px 10px;
+    padding: 150px 10px;
 }
 /* ------------------- right card properties -------------------- */
 .inner-text{
-  color: #414141;
+  color: #1F1F1F;
   font-size: 28px;
   line-height: 32px;
   padding: 40px;
@@ -251,12 +306,12 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 200px 10px;
+  padding: 150px 10px;
 }
 /* ------------------- card container -------------------- */
 .card-container{
   /* height: 2000px; */
-  padding-top: 200px;
+  padding-top: 180px;
   padding-bottom: 40px;
 
   /* display: grid;
@@ -276,19 +331,19 @@
 .title{
   padding-top: 150px;
   font-size: 128px;
-  color: #666666;
-  text-shadow: 2px 2px 3px rgb(0 0 0 / 50%);
+  color: #1F1F1F;
+  text-shadow: 2px 2px 3px rgb(0 0 0 / 30%);
 }
 .subtitle{
   padding-top: 100px;
   font-size: 32px;
-  color: #666666;
+  color: #1F1F1F;
   line-height: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-shadow: 2px 2px 3px rgb(0 0 0 / 50%);
+  text-shadow: 2px 2px 3px rgb(0 0 0 / 30%);
 }
 .itsme-container{
   height: 150px;
@@ -359,19 +414,19 @@ a:hover {
   .title{
     padding-top: 80px;
     font-size: 50px;
-    color: #DADADA;
-    text-shadow: 2px 2px 3px rgb(0 0 0 / 70%);
+    color: #1F1F1F;
+    /* text-shadow: 2px 2px 3px rgb(0 0 0 / 70%); */
   }
   .subtitle{
     padding-top: 60px;
     font-size: 20px;
-    color: #DADADA;
+    color: #1F1F1F;
     line-height: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-shadow: 2px 2px 3px rgb(0 0 0 / 70%);
+    /* text-shadow: 2px 2px 3px rgb(0 0 0 / 70%); */
   }
   .contact-button{
     height: 45px;
