@@ -1,5 +1,5 @@
 (ns portfolio.home
-
+; CJ217082914DE
 
   (:require
    ["react-parallax" :refer (Parallax)]
@@ -18,11 +18,10 @@
 (defn its-me []
   [:img.itsme {:src "/images/itsme.jpg"}])
 
+  ; ; (defn nav-button [title page]
+  ;   [:button {:on-click #(change-page page)} title]))
 
-;;------------------- button arrows -----------------------------
-; (defn nav-button [title page]
-;   [:button {:on-click #(change-page page)} title])
-
+;;------------------- button arrows ----------------------------
 (defn arrow-back []
   [:img {:src "/images/arrow_back.svg"
               :style {
@@ -119,19 +118,19 @@
    [mobile-card "MY SKILLS" "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]
    [mobile-card "MY GOALS" "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]
    [mobile-card "MY HOBBIES" "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]
-   [footer]
+   [footer]])
 
-   ;;------------------- navbar and button -----------------------------
-   (defn nav-button [title page]
-     [:button {:on-click #(change-page page)} title])
+;;------------------- navbar and button -----------------------------
+(defn nav-button [title page]
+  [:button {:on-click #(change-page page)} title])
 
-   (defn nav-bar []
-     [:div
-      [nav-button "main" :main]
-      [nav-button "about-me" :about-me]
-      [nav-button "my-skills" :my-skills]
-      [nav-button "my-goals" :my-goals]
-      [nav-button "my-hobbies" :my-hobbies]])])
+(defn nav-bar []
+  [:div
+   [nav-button "main" :main]
+   [nav-button "about-me" :about-me]
+   [nav-button "my-skills" :my-skills]
+   [nav-button "my-goals" :my-goals]
+   [nav-button "my-hobbies" :my-hobbies]])
 ;;------------------- pages (main ect..) -----------------------------
 (defn main-page []
   [:div.max-width-container
@@ -202,15 +201,15 @@
 ;;/////////////// home page architecture /////////////////////////////////////////
 
 (defn view []
-  [:> Parallax {:bgImage "/images/waves-1500x4000.svg"
-                :bgImageAlt "the cat"
-                :strength 800}
+ [:> Parallax {:bgImage "/images/waves-1500x4000.svg"
+               :bgImageAlt "the cat"
+               :strength 1000}
 
-   [:div [nav-bar]
-    (case @page
-         :main [main-page]
-         :about-me [about-me]
-         :my-skills [my-skills]
-         :my-goals [my-goals]
-         :my-hobbies [my-hobbies]
-         [about-me])]])
+  [:div [nav-bar]
+   (case @page
+        :main [main-page]
+        :about-me [about-me]
+        :my-skills [my-skills]
+        :my-goals [my-goals]
+        :my-hobbies [my-hobbies]
+        [main-page])]])
