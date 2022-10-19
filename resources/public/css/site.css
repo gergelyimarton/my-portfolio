@@ -31,6 +31,17 @@
   overflow-x: hidden;
 }
 /* ------------------- page arrow button -------------------- */
+.page-button-container{
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  align-items: center;
+  gap: 800px;
+  padding-top: 20px;
+}
+
+
+
 .page-arrow{
   display: flex;
   flex-direction: row;
@@ -40,7 +51,7 @@
   height: 100px;
   width: 100px;
 
-  border-radius: 100%;
+  border-radius: 100px;
   background-color: rgba(255, 255, 255, 0.03);
   box-shadow: 4px 4px 50px 10px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(10px);

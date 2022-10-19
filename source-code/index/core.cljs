@@ -38,9 +38,9 @@
                   (let [match (reitit/match-by-path router path)
                         current-page (:name (:data  match))
                         route-params (:path-params match)]
-                    (reagent/after-render clerk/after-render!)
                     (session/put! :route {:current-page current-page
                                           :route-params route-params})
+                    (reagent/after-render clerk/after-render!)
                     (clerk/navigate-page! path)))
 
     :path-exists? (fn [path]
