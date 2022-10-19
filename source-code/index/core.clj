@@ -14,7 +14,7 @@
   [:head
    [:title "hello"]
    [:meta {:charset "utf-8"}]
-   [:meta {:name "viewport" 
+   [:meta {:name "viewport"
            :content "width=device-width, initial-scale=1"}]
    [:link {:rel "icon"
            :type "image/png"
@@ -28,7 +28,7 @@
    (head)
    [:body {:class "body-container"}
     mount-target
-    (include-js "https://murdad.github.io/ffontsloader/dist/fontsloader.js")
+    (include-js "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/gsap.min.js")
     (include-js "/external-js/detect-provider.min.js")
     (include-js "/external-js/web3.min.js")
     (include-js "/js/core/app.js")]))
@@ -45,11 +45,10 @@
   (reitit-ring/ring-handler
    (reitit-ring/router
     [["/" {:get {:handler index-handler}}]
-     ["/items"
-      ["" {:get {:handler index-handler}}]
-      ["/:item-id" {:get {:handler index-handler
-                          :parameters {:path {:item-id int?}}}}]]
-     ["/about" {:get {:handler index-handler}}]])
+     ["/about-me" {:get {:handler index-handler}}]
+     ["/my-skills" {:get {:handler index-handler}}]
+     ["/my-goals" {:get {:handler index-handler}}]
+     ["/my-hobbies" {:get {:handler index-handler}}]])
    (reitit-ring/routes
     (reitit-ring/create-resource-handler {:path "/" :root "/public"})
     (reitit-ring/create-default-handler))

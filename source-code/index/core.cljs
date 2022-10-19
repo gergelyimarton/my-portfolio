@@ -10,13 +10,20 @@
 
 
 ;; -------------------------
+
+(def router
+  (reitit/router
+   [["/" :main]
+    ["/about-me" :about-me]
+    ["/my-skills" :my-skills]
+    ["/my-goals" :my-goals]
+    ["/my-hobbies" :my-hobbies]]))
+
 ;; Routes
 
 
 (defn app []
   [portfolio/view])
-
-
 
 ;; -------------------------
 ;; Initialize app
@@ -25,20 +32,18 @@
   (rdom/render [app] (.getElementById js/document "app")))
 
 (defn start-app! []
-  ;; (clerk/initialize!)
-  ;; (accountant/configure-navigation!
-  ;;  {:nav-handler
-  ;;   (fn [path]
-  ;;     (let [match (reitit/match-by-path router path)
-  ;;           current-page (:name (:data  match))
-  ;;           route-params (:path-params match)]
-  ;;       (reagent/after-render clerk/after-render!)
-  ;;       (session/put! :route {:current-page (page-for current-page)
-  ;;                             :route-params route-params})
-  ;;       (clerk/navigate-page! path)))
+  (clerk/initialize!)
+  (accountant/configure-navigation!
+   {:nav-handler (fn [path]
+                  (let [match (reitit/match-by-path router path)
+                        current-page (:name (:data  match))
+                        route-params (:path-params match)]
+                    (reagent/after-render clerk/after-render!)
+                    (session/put! :route {:current-page current-page
+                                          :route-params route-params})
+                    (clerk/navigate-page! path)))
 
-  ;;   :path-exists?
-  ;;   (fn [path]
-  ;;     (boolean (reitit/match-by-path router path)))})
-  ;; (accountant/dispatch-current!)
+    :path-exists? (fn [path]
+                   (boolean (reitit/match-by-path router path)))})
+  (accountant/dispatch-current!)
   (render-app!))

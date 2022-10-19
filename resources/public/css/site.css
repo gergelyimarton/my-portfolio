@@ -30,6 +30,34 @@
 
   overflow-x: hidden;
 }
+/* ------------------- page arrow button -------------------- */
+.page-arrow{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  height: 100px;
+  width: 100px;
+
+  border-radius: 100%;
+  background-color: rgba(255, 255, 255, 0.03);
+  box-shadow: 4px 4px 50px 10px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+
+  cursor: pointer;
+  transition: 1s ease;
+  transform: scale(1);
+}
+.page-arrow:hover{
+  background-color: rgba(255, 255, 255, 0.70);
+  transform: scale(1.1);
+  transition: 1s ease;
+}
+.page-arrow:active{
+  transform: scale(0.9);
+  transition: 0.1s ease;
+}
 /* ------------------- about me page -------------------- */
 .about-me-page-container{
   height: 94vh;
@@ -106,9 +134,6 @@
   box-shadow: 4px 4px 50px 10px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(10px);
 }
-
-
-
 /* ------------------- mobile card -------------------- */
 .mobile-card-row{
   padding-top: 100px;

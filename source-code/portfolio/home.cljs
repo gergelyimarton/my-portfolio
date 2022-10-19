@@ -1,49 +1,45 @@
 (ns portfolio.home
-; CJ217082914DE
+
 
   (:require
    ["react-parallax" :refer (Parallax)]
-   [reagent.core :as reagent :refer [atom]]))
+   [reagent.core :as reagent :refer [atom]]
+   [reagent.session :as session]))
 
 ;;------------------- atom functions -----------------------------
-(def page (atom :main))
-
-
-(defn change-page [new-page]
-  (reset! page new-page))
-
-
+(defn change-page [new-page])
+;   (reset! page new-page))
 
 ;;-----------------------------
 (defn its-me []
   [:img.itsme {:src "/images/itsme.jpg"}])
 
-  ; ; (defn nav-button [title page]
-  ;   [:button {:on-click #(change-page page)} title]))
-
 ;;------------------- button arrows ----------------------------
-(defn arrow-back []
+(defn arrow-back [page]
   [:img {:src "/images/arrow_back.svg"
               :style {
                       :padding-left "25px"
                       :height "70px"
                       :width "70px"}}])
+         ; :on-click #(change-page page)}])
 
 
 
-(defn arrow-forward []
+(defn arrow-forward [page]
   [:img {:src "/images/arrow_forward.svg"
               :style {
                       :padding-left "10px"
                       :height "70px"
                       :width "70px"}}])
+         ; :on-click #(change-page page)}])
 
 
-(defn mobile-button []
+(defn mobile-button [page]
   [:img {:src "/images/more_horizontal.svg"
               :style {
                       :height "70px"
                       :width "70px"}}])
+         ; :on-click #(change-page page)}])
 
 
 ;;------------------- footer images -----------------------------
@@ -72,65 +68,65 @@
 
 
 ;;------------------- right card -----------------------------
-(defn right-card [title description]
+(defn right-card [title description page]
    [:div.right-card-row
     [:div
      [:div.button-right
-      [arrow-back]]]
+      [arrow-back page]]]
     [:div.right-card-title {:class ["title-shadow"]} title]
     [:div.card
      [:div.inner-text description]]])
 
 ;;------------------- left card -----------------------------
-(defn left-card [title description]
+(defn left-card [title description page]
   [:div.left-card-row
    [:div.card
     [:div.inner-text description]]
    [:div.left-card-title {:class ["title-shadow"]} title]
    [:div
     [:div.button-left
-     [arrow-forward]]]])
+     [arrow-forward page]]]])
 
 ;;------------------- card container -----------------------------
 (defn card-container []
   [:div.card-container
-   [right-card "ABOUT ME" "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]
-   [left-card "MY SKILLS" "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]
-   [right-card "MY GOALS" "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]
-   [left-card "MY HOBBIES" "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]
+   [right-card "ABOUT ME" "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English." :about-me]
+   [left-card "MY SKILLS" "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English." :my-skills]
+   [right-card "MY GOALS" "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English." :my-goals]
+   [left-card "MY HOBBIES" "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English." :my-hobbies]
 ;;------------------- contacts footer -----------------------------
    [footer]])
 
 ;;------------------- mobile card -----------------------------
-(defn mobile-card [title description]
+(defn mobile-card [title description page]
   [:div.mobile-card-row
    [:div.mobile-card-title {:class ["title-shadow"]} title]
    [:div.mobile-card
     [:div.mobile-inner-text description]]
    [:div.mobile-button
-    [mobile-button]]])
+    [mobile-button page]]])
 
 
 ;;------------------- mobile card container -----------------------------
 (defn mobile-card-container []
   [:div.mobile-card-container
-   [mobile-card "ABOUT ME" "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]
-   [mobile-card "MY SKILLS" "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]
-   [mobile-card "MY GOALS" "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]
-   [mobile-card "MY HOBBIES" "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]
+   [mobile-card "ABOUT ME" "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English." :about-me]
+   [mobile-card "MY SKILLS" "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English." :my-skills]
+   [mobile-card "MY GOALS" "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English." :my-goals]
+   [mobile-card "MY HOBBIES" "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English." :my-hobbies]
    [footer]])
 
 ;;------------------- navbar and button -----------------------------
-(defn nav-button [title page]
-  [:button {:on-click #(change-page page)} title])
+(defn nav-button [title href]
+  [:a {:href href} title])
 
 (defn nav-bar []
   [:div
-   [nav-button "main" :main]
-   [nav-button "about-me" :about-me]
-   [nav-button "my-skills" :my-skills]
-   [nav-button "my-goals" :my-goals]
-   [nav-button "my-hobbies" :my-hobbies]])
+   [nav-button "main" "/"]
+   [nav-button "about-me" "/about-me"]
+   [nav-button "my-skills" "/my-skills"]
+   [nav-button "my-goals" "/my-goals"]
+   [nav-button "my-hobbies" "/my-hobbies"]])
 ;;------------------- pages (main ect..) -----------------------------
 (defn main-page []
   [:div.max-width-container
@@ -153,8 +149,8 @@
                    :align-items "center"
                    :gap "900px"
                    :padding-top "20px"}}
-     [nav-button "main" :main]
-     [nav-button "my-skills" :my-skills]]]])
+     [:div.page-arrow
+      [arrow-back "main" :main]]]]])
 
 (defn my-skills []
   [:div.max-width-container
@@ -167,8 +163,8 @@
                    :align-items "center"
                    :gap "900px"
                    :padding-top "20px"}}
-     [nav-button "about-me" :about-me]
-     [nav-button "my-goals" :my-goals]]]])
+     [:div.page-arrow
+      [arrow-back "main" :main]]]]])
 
 (defn my-goals []
   [:div.max-width-container
@@ -181,8 +177,8 @@
                    :align-items "center"
                    :gap "900px"
                    :padding-top "20px"}}
-     [nav-button "my-skills" :my-skills]
-     [nav-button "my-hobbies" :my-hobbies]]]])
+     [:div.page-arrow
+      [arrow-back "main" :main]]]]])
 
 (defn my-hobbies []
   [:div.max-width-container
@@ -195,21 +191,22 @@
                    :align-items "center"
                    :gap "900px"
                    :padding-top "20px"}}
-     [nav-button "my-goals" :my-goals]
-     [nav-button "main" :main]]]])
+     [:div.page-arrow
+      [arrow-back "main" :main]]]]])
 
 ;;/////////////// home page architecture /////////////////////////////////////////
 
 (defn view []
- [:> Parallax {:bgImage "/images/waves-1500x4000.svg"
-               :bgImageAlt "the cat"
-               :strength 1000}
+  (let [page (:current-page (session/get :route))]
+    [:> Parallax {:bgImage "/images/waves-1500x4000.svg"
+                  :bgImageAlt "the cat"
+                  :strength 1000}
 
-  [:div [nav-bar]
-   (case @page
-        :main [main-page]
-        :about-me [about-me]
-        :my-skills [my-skills]
-        :my-goals [my-goals]
-        :my-hobbies [my-hobbies]
-        [main-page])]])
+     [:div [nav-bar]
+      (case page
+           :main [main-page]
+           :about-me [about-me]
+           :my-skills [my-skills]
+           :my-goals [my-goals]
+           :my-hobbies [my-hobbies]
+           [main-page])]]))
