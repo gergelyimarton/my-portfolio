@@ -17,3 +17,7 @@ pom.xml.asc
 /.shadow-cljs/
 /resources/public/js/
 .cpcache
+.clj-kondo
+.lsp
+.vscode
+.DS_Store
