@@ -238,6 +238,14 @@
   transition: 0.1s ease;
 }
 /* ------------------- card titles -------------------- */
+.subpage-card-title{
+  color: #5f252599;
+  font-size: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 70px;
+  white-space: nowrap;
+}
 .title-shadow{
   text-shadow: 5px 5px 5px rgba(0,0,0,0.3);
 }

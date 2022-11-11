@@ -170,17 +170,31 @@
 (defn about-me []
   [:div.max-width-container
    [:div.about-me-page-container
+    [:div.subpage-card-title "ABOUT ME"]
     [:div.about-me-page-card
      [:div.inner-text "//ABOUT ME// Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]]
-    [:div.page-button-container
+    [:div.page-button-container 
      [:div.page-arrow
-      [arrow-back "/"]]
+      [:a {:href href}]
+      [arrow-back "/"]
+      [:div 
+       {:style
+        {:padding-right "15px"
+         :font-size "30px"
+         :font-style "italic"}} "back"]]
      [:div.page-arrow
+      [:div {:style
+             {:padding-left "15px"
+              :font-size "30px"
+              :font-style "italic"}}
+       "next"]
       [arrow-forward "/my-skills"]]]]])
+      
 
 (defn my-skills []
   [:div.max-width-container
    [:div.my-skills-page-container
+    [:div.subpage-card-title "MY SKILLS"]
     [:div.my-skills-page-card
      [:div.inner-text "//MY SKILLS// Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]]
     [:div.page-button-container
@@ -192,6 +206,7 @@
 (defn my-goals []
   [:div.max-width-container
    [:div.my-goals-page-container
+    [:div.subpage-card-title "MY GOALS"]
     [:div.my-goals-page-card
      [:div.inner-text "//MY GOALS// Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]]
     [:div.page-button-container
@@ -203,6 +218,7 @@
 (defn my-hobbies []
   [:div.max-width-container
    [:div.my-hobbies-page-container
+    [:div.subpage-card-title "MY HOBBIES"]
     [:div.my-hobbies-page-card
      [:div.inner-text "//MY HOBBIES// Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]]
     [:div.page-button-container
