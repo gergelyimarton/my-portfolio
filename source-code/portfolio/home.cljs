@@ -15,28 +15,22 @@
   [:img.itsme {:src "/images/itsme.jpg"}])
 
 ;;------------------- button arrows ----------------------------
-(defn arrow-back [href]
-  [:a {:href href
-       :style {:width "80px"
-               :height "80px"}}
+(defn arrow-back [href] 
    [:img {:src "/images/arrow_back.svg"
                :style {
                        :padding-left "13px"
-                       :height "100%"
-                       :width "100%"}}]])
+                       :height "80px"
+                       :width "80px"}}])
          ; :on-click #(change-page page)}])
 
 
 
-(defn arrow-forward [href]
-  [:a {:href href
-       :style {:width "80px"
-               :height "80px"}}
+(defn arrow-forward [href] 
    [:img {:src "/images/arrow_forward.svg"
                :style {
                        :padding-left "5px"
-                       :height "100%"
-                       :width "100%"}}]])
+                       :height "80px"
+                       :width "80px"}}])
          ; :on-click #(change-page page)}])
 
 
@@ -174,21 +168,22 @@
     [:div.about-me-page-card
      [:div.inner-text "//ABOUT ME// Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]]
     [:div.page-button-container 
-     [:div.page-arrow
-      [:a {:href href}]
-      [arrow-back "/"]
-      [:div 
-       {:style
-        {:padding-right "15px"
-         :font-size "30px"
-         :font-style "italic"}} "back"]]
-     [:div.page-arrow
-      [:div {:style
-             {:padding-left "15px"
-              :font-size "30px"
-              :font-style "italic"}}
-       "next"]
-      [arrow-forward "/my-skills"]]]]])
+     [:a.page-arrow {:href "/"}
+      [:div.page-arrow-inner-container
+       [arrow-back]
+       [:div
+        {:style
+         {:padding-right "20px"
+          :font-size "30px"
+          :font-style "italic"}} "back"]]] 
+     [:a.page-arrow {:href "/my-skills"}
+      [:div.page-arrow-inner-container
+       [:div {:style
+              {:padding-left "20px"
+               :font-size "30px"
+               :font-style "italic"}}
+        "next"]
+       [arrow-forward]]]]]])
       
 
 (defn my-skills []

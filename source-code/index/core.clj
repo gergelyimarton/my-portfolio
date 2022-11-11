@@ -19,6 +19,7 @@
    [:link {:rel "icon"
            :type "image/png"
            :href "/images/favicon.png"}]
+   (include-css "/css/reset.css")
    (include-css "/css/site.css")
    (include-css "https://fonts.googleapis.com/icon?family=Material+Icons")
    (include-css "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0")])
