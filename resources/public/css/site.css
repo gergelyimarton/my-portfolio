@@ -486,6 +486,11 @@ a:hover {
     margin-top: 80px;
     margin-bottom: 20px;
   }
+  .link{
+    height: auto;
+    width: auto;
+    display: flex;
+  }
   .card-container{
     display: none;
   }
