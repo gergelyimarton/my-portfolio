@@ -244,9 +244,10 @@
 .subpage-card-title{
   color: #5f252599;
   font-size: 100px;
-  padding-left: 50px;
+  padding: 50px 50px;
+  /* padding-left: 50px;
   padding-right: 50px;
-  padding-bottom: 70px;
+  padding-bottom: 70px; */
   white-space: nowrap;
 }
 .title-shadow{
