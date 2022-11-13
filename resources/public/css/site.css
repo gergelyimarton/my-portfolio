@@ -45,8 +45,28 @@
   align-items: center;
 }
 
+.arrow-pic-right{
+  padding-left: 15px;
+  height: 80px;
+  width: 80px;
+}
+.arrow-pic-left{
+  padding-right: 13px;
+  height: 80px;
+  width: 80px;
+}
+
+.button-text-left{
+  padding-right: 20px;
+  font-size: 30px;
+}
+
+.button-text-right{
+  padding-left: 20px;
+  font-size: 30px;
+}
 .page-arrow{
-  display: flex;
+  display: flex; 
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -72,73 +92,16 @@
   transform: scale(0.9);
   transition: 0.1s ease;
 }
-/* ------------------- about me page -------------------- */
-.about-me-page-container{
-  height: 94vh;
+/* ------------------- subpages -------------------- */
+.subpage-container{
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.about-me-page-card{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 71px;
-  background-color: rgba(255, 255, 255, 0.03);
-  box-shadow: 4px 4px 50px 10px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(10px);
-}
-/* ------------------- my skills page -------------------- */
-.my-skills-page-container{
-  height: 94vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.my-skills-page-card{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 71px;
-  background-color: rgba(255, 255, 255, 0.03);
-  box-shadow: 4px 4px 50px 10px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(10px);
-}
-/* ------------------- my goals page -------------------- */
-.my-goals-page-container{
-  height: 94vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.my-goals-page-card{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 71px;
-  background-color: rgba(255, 255, 255, 0.03);
-  box-shadow: 4px 4px 50px 10px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(10px);
-}
-/* ------------------- my hobbies page -------------------- */
-.my-hobbies-page-container{
-  height: 94vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.my-hobbies-page-card{
-  display: flex;
+.subpage-card{
+    display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -451,7 +414,7 @@ a:hover {
   }
 }
 @media screen and (max-width: 800px) {
-  .max-width-container {
+   .max-width-container {
     max-width: 360px;
     margin: auto;
     display: flex;
@@ -497,5 +460,59 @@ a:hover {
   .contact-button{
     transition: 1s ease;
     transform: scale(1);
+  }
+/* ------------------- subpages -------------------- */
+.subpage-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.subpage-card-title{
+   color: #5f252599;
+   font-size: 50px;
+   padding: 25px 25px;
+   white-space: nowrap;
+  }
+
+  .subpage-card{
+    height: 600px;
+    width: 250px;
+    border-radius: 30px;
+  }
+  .inner-text{
+    color: #1F1F1F;
+    font-size: 14px;
+    line-height: 20px;
+    text-shadow: 2px 2px 3px rgb(0 0 0 / 20%);
+    text-align: center;
+  }
+  .page-button-container{
+    gap: 10px;
+    padding-top: 10px;
+  }
+  .page-arrow{
+    height: 50px;
+    width: 120px;
+  }
+
+  .arrow-pic-right{
+    padding-left: 8px;
+    height: 40px;
+    width: 40px;
+  }
+  .arrow-pic-left{
+    padding-right: 6px;
+    height: 40px;
+    width: 40px;
+  }
+
+  .button-text-left{
+    padding-right: 14px;
+    font-size: 20px;
+  }
+  .button-text-right{
+    padding-left: 14px;
+    font-size: 20px;
   }
 }
