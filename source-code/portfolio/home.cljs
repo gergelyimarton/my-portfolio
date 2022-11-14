@@ -58,7 +58,7 @@
    [instagram]
    [youtube]])
 
-;;test
+
 
 ;;------------------- right card -----------------------------
 (defn right-card [title description href]
@@ -148,10 +148,10 @@
 ;;------------------- pages (main ect..) -----------------------------
 (defn main-page []
   [:div.max-width-container
-   [:div.title "hello friend!"]
+   [:div.title.glitch "Hello friend!"]
    [:div.subtitle
     [:div "My name is Marci"]
-    [:div "and this is my portfolio project!"]]
+    [:div "and this is my portfolio!"]]
     ; [:div.itsme-container [its-me]]]
    [mobile-card-container]
    [card-container]])
