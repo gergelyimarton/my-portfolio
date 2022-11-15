@@ -15,6 +15,7 @@
    position: relative;
    line-height: 1.2;
    color: #e5ea9b;
+   letter-spacing: 8px;
    animation: shift 4s ease-in-out infinite alternate;
    transform: skewX(0deg);
    z-index: 1;

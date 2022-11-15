@@ -17,6 +17,7 @@
     "react-multi-carousel": "^2.8.0",
     "react-parallax": "^3.5.1",
     "react-responsive-carousel": "^3.2.23",
+    "react-scrollmagic": "^2.3.0",
     "react-slick": "^0.28.1",
     "react-transition-group": "^4.4.2"
   }

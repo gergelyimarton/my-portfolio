@@ -1,10 +1,49 @@
 (ns portfolio.home
 
 
-  (:require
+  (:require 
    ["react-parallax" :refer (Parallax)]
    [reagent.core :as reagent :refer [atom]]
-   [reagent.session :as session]))
+   [reagent.session :as session]
+   
+   ["react-scrollmagic" :refer (Controller, Scene)]))
+
+
+
+;; const TopArticles = ({articles}) => (<FlipMove duration= {750} easing= "ease-out" >
+;;                                                {articles}
+;;                                                </FlipMove>);
+
+
+;; (defn top-articles [articles]
+;;   [:> FlipMove
+;;    {:duration 750
+;;     :easing "ease-out"}
+;;    articles])
+
+
+
+;; <div>
+;; <Controller>
+;; <Scene duration= {600} pin>
+;; <div>Sticky Example</div>
+;; </Scene>
+;; </Controller>
+;; </div>
+
+
+(defn App []  
+  [:div 
+   [:> Controller
+    (reagent/as-element
+     [:> Scene
+      {:duration 600
+       :pin true} 
+      "Sticky Example"])]])
+                  
+
+
+
 
 ;;------------------- atom functions -----------------------------
 (defn change-page [new-page])
@@ -229,10 +268,11 @@
                   :strength 1000}
 
      [:div [nav-bar]
+      [App]
       (case page
-           :main [main-page]
-           :about-me [about-me]
-           :my-skills [my-skills]
-           :my-goals [my-goals]
-           :my-hobbies [my-hobbies]
-           [main-page])]]))
+        :main [main-page]
+        :about-me [about-me]
+        :my-skills [my-skills]
+        :my-goals [my-goals]
+        :my-hobbies [my-hobbies]
+        [main-page])]]))
