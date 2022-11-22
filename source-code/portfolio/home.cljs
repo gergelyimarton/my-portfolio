@@ -1,48 +1,27 @@
 (ns portfolio.home
 
-
   (:require 
    ["react-parallax" :refer (Parallax)]
    [reagent.core :as reagent :refer [atom]]
    [reagent.session :as session]
    
-   ["react-scrollmagic" :refer (Controller, Scene)]))
+   ["react-scrollmagic" :refer (Controller, Scene)]
+   ["react-gsap" :refer (Tween, Timeline)]
+   ["gsap/dist/ScrollTrigger" :refer (ScrollTrigger)]))
+  ;;  ["aos" :refer AOS]))
 
 
-
-;; const TopArticles = ({articles}) => (<FlipMove duration= {750} easing= "ease-out" >
-;;                                                {articles}
-;;                                                </FlipMove>);
-
-
-;; (defn top-articles [articles]
-;;   [:> FlipMove
-;;    {:duration 750
-;;     :easing "ease-out"}
-;;    articles])
-
-
-
-;; <div>
-;; <Controller>
-;; <Scene duration= {600} pin>
-;; <div>Sticky Example</div>
-;; </Scene>
-;; </Controller>
-;; </div>
-
-
-(defn App []  
-  [:div 
-   [:> Controller
-    (reagent/as-element
-     [:> Scene
-      {:duration 600
-       :pin true} 
-      "Sticky Example"])]])
-                  
-
-
+(defn tween-wrapper [{:keys [component x]}]
+  (let [random-id (str "tween-" (random-uuid))]
+    [:> Tween
+     {:from {:x x
+             :opacity 0
+             :scrollTrigger {:trigger (str "." random-id)
+                             :start "-10px 200px"
+                             :end "center center"
+                             :scrub 1
+                             :markers "true"}}}
+     [:div {:class random-id} component]]))
 
 
 ;;------------------- atom functions -----------------------------
@@ -124,21 +103,39 @@
 ;;------------------- card container -----------------------------
 (defn card-container []
   [:div.card-container
-   [right-card "ABOUT ME"
-               "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
-               "/about-me"]
+   [tween-wrapper
+    {:component
+      [right-card "ABOUT ME"
+                    "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+                    "/about-me"]
+      :x "100vw"}]
+   
+   [tween-wrapper
+    {:component
+      [left-card "MY SKILLS"
+                  "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+                  "/my-skills"]
+      :x "-100vw"}]
+   
+   [tween-wrapper
+    {:component
+      [right-card "MY GOALS"
+                  "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+                  "/my-goals"]
+      :x "100vw"}]
+   
+   [tween-wrapper
+    {:component
+      [left-card "MY HOBBIES"
+                  "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+                  "/my-hobbies"]
+      :x "-100vw"}]
 
-   [left-card "MY SKILLS"
-              "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
-              "/my-skills"]
+   
 
-   [right-card "MY GOALS"
-               "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
-               "/my-goals"]
+   
 
-   [left-card "MY HOBBIES"
-              "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
-              "/my-hobbies"]
+   
 ;;------------------- contacts footer -----------------------------
    [footer]])
 
@@ -187,7 +184,7 @@
 ;;------------------- pages (main ect..) -----------------------------
 (defn main-page []
   [:div.max-width-container
-   [:div.title.glitch "Hello friend!"]
+   [:div.title "Hello friend!"]
    [:div.subtitle
     [:div "My name is Marci"]
     [:div "and this is my portfolio!"]]
@@ -262,17 +259,18 @@
 ;;/////////////// home page architecture /////////////////////////////////////////
 
 (defn view []
+  
   (let [page (:current-page (session/get :route))]
-    [:> Parallax {:bgImage "/images/waves-1500x4000.svg"
-                  :bgImageAlt "the cat"
-                  :strength 1000}
-
-     [:div [nav-bar]
-      [App]
-      (case page
-        :main [main-page]
-        :about-me [about-me]
-        :my-skills [my-skills]
-        :my-goals [my-goals]
-        :my-hobbies [my-hobbies]
-        [main-page])]]))
+    [:div
+     
+     [:> Parallax {:bgImage "/images/waves-1500x4000.svg"
+                   :bgImageAlt "the cat"
+                   :strength 1000}
+      [:div [nav-bar]
+       (case page
+         :main [main-page]
+         :about-me [about-me]
+         :my-skills [my-skills]
+         :my-goals [my-goals]
+         :my-hobbies [my-hobbies]
+         [main-page])]]]))
