@@ -21,6 +21,8 @@
 
   overflow-x: hidden;
 }
+
+
 /* ------------------- page arrow button -------------------- */
 .page-button-container{
   display: flex;
@@ -48,13 +50,15 @@
 }
 
 .button-text-left{
-  padding-right: 20px;
+  padding-right: 30px;
   font-size: 30px;
+  font-style: italic;
 }
 
 .button-text-right{
-  padding-left: 20px;
+  padding-left: 30px;
   font-size: 30px;
+  font-style: italic;
 }
 .page-arrow{
   display: flex; 
@@ -254,7 +258,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-    padding: 150px 10px;
+    padding: 100px 10px;
 }
 /* ------------------- right card properties -------------------- */
 .inner-text{
@@ -308,7 +312,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 150px 10px;
+  padding: 100px 10px;
 }
 /* ------------------- card container -------------------- */
 .card-container{
@@ -378,7 +382,7 @@
      }
 }
 /*------------------------*/
-/* h1, h2, h3 {
+h1, h2, h3 {
   color: #000;
 }
 h1 {
@@ -392,11 +396,27 @@ h3 {
 }
 a {
   text-decoration: none;
-  color: #09f;
+  color: black;
+} 
+/* unvisited link */
+a:link {
+  color: black;
 }
+
+/* visited link */
+a:visited {
+  color: black;
+}
+
+/* mouse over link */
 a:hover {
-  text-decoration: underline;
-} */
+  color: #ff9393;
+}
+
+/* selected link */
+a:active {
+  color: rgb(255, 187, 0);
+} 
 /* ------------------- @media -------------------- */
 @media screen and (min-width: 800px){
 

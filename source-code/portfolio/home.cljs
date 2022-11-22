@@ -10,17 +10,18 @@
    ["gsap/dist/ScrollTrigger" :refer (ScrollTrigger)]))
   ;;  ["aos" :refer AOS]))
 
+;;------------------- scroll magic -----------------------------
+
 
 (defn tween-wrapper [{:keys [component x]}]
   (let [random-id (str "tween-" (random-uuid))]
     [:> Tween
      {:from {:x x
-             :opacity 0
              :scrollTrigger {:trigger (str "." random-id)
-                             :start "-10px 200px"
-                             :end "center center"
-                             :scrub 1
-                             :markers "true"}}}
+                             :start "-100px center"
+                             :end "180 center"
+                             :scrub 1.5}}}
+                            ;;  :markers "true"}}}
      [:div {:class random-id} component]]))
 
 
@@ -202,10 +203,10 @@
      [:a.page-arrow {:href "/"}
       [:div.page-arrow-inner-container
        [arrow-back]
-       [:div.button-text-left "main"]]] 
+       [:div.button-text-left "MAIN"]]] 
      [:a.page-arrow {:href "/my-skills"}
       [:div.page-arrow-inner-container
-       [:div.button-text-right "next"]
+       [:div.button-text-right "NEXT  "]
        [arrow-forward]]]]]]) 
 
 (defn my-skills []
@@ -218,10 +219,10 @@
      [:a.page-arrow {:href "/about-me"}
       [:div.page-arrow-inner-container
        [arrow-back]
-       [:div.button-text-left "back"]]]
+       [:div.button-text-left "BACK"]]]
      [:a.page-arrow {:href "/my-goals"}
       [:div.page-arrow-inner-container
-       [:div.button-text-right "next"]
+       [:div.button-text-right "NEXT"]
        [arrow-forward]]]]]])
 
 (defn my-goals []
@@ -234,10 +235,10 @@
      [:a.page-arrow {:href "/my-skills"}
       [:div.page-arrow-inner-container
        [arrow-back]
-       [:div.button-text-left "back"]]]
+       [:div.button-text-left "BACK"]]]
      [:a.page-arrow {:href "/my-hobbies"}
       [:div.page-arrow-inner-container
-       [:div.button-text-right "next"]
+       [:div.button-text-right "NEXT"]
        [arrow-forward]]]]]])
 
 (defn my-hobbies []
@@ -250,10 +251,10 @@
      [:a.page-arrow {:href "/my-goals"}
       [:div.page-arrow-inner-container
        [arrow-back]
-       [:div.button-text-left "back"]]]
+       [:div.button-text-left "BACK"]]]
      [:a.page-arrow {:href "/"}
       [:div.page-arrow-inner-container
-       [:div.button-text-right "main"]
+       [:div.button-text-right "MAIN"]
        [arrow-forward]]]]]])
 
 ;;/////////////// home page architecture /////////////////////////////////////////
@@ -266,7 +267,7 @@
      [:> Parallax {:bgImage "/images/waves-1500x4000.svg"
                    :bgImageAlt "the cat"
                    :strength 1000}
-      [:div [nav-bar]
+      [:div
        (case page
          :main [main-page]
          :about-me [about-me]
