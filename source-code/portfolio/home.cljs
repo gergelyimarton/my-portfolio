@@ -266,6 +266,19 @@
          [:div.button-text-right "MAIN"]
          [arrow-forward]]]]]]])
 
+
+;;------------------- pages background changer -----------------------------
+
+
+(defn decide-background [page]
+ (case page
+         :main "/images/waves-1500x4000.svg"
+               "/images/blurry.svg"))
+
+
+
+
+
 ;;/////////////// home page architecture /////////////////////////////////////////
 
 (defn view []
@@ -273,7 +286,7 @@
   (let [page (:current-page (session/get :route))]
     [:div
      
-     [:> Parallax {:bgImage "/images/waves-1500x4000.svg"
+     [:> Parallax {:bgImage (decide-background page)
                    :bgImageAlt "the cat"
                    :strength 1000}
       [:div

@@ -39,7 +39,7 @@
 }
 
 .arrow-pic-right{
-  padding-left: 15px;
+  padding-left: 13px;
   height: 80px;
   width: 80px;
 }
@@ -70,7 +70,7 @@
   /* width: 150px; */
 
   border-radius: 100px;
-  background-color: rgba(255, 255, 255, 0.03);
+  background-color: rgba(255, 255, 255, 0.03);;
   box-shadow: 4px 4px 50px 10px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(10px);
   cursor: pointer;
@@ -101,7 +101,7 @@
   justify-content: center;
 
   border-radius: 71px;
-  background-color: rgba(255, 255, 255, 0.03);
+  background-color: rgba(255, 255, 255, 0.03);;
   box-shadow: 4px 4px 50px 10px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(10px);
 }
@@ -126,7 +126,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 30px;
-  background-color: rgba(255, 255, 255, 0.03);
+  background-color: rgba(255, 255, 255, 0.03);;
   box-shadow: 4px 4px 50px 10px rgb(0 0 0 / 25%);
   backdrop-filter: blur(10px);
 }
@@ -150,7 +150,7 @@
   width: 70px;
 
   border-radius: 100%;
-  background-color: rgba(255, 255, 255, 0.03);
+  background-color: rgba(255, 255, 255, 0.03);;
   box-shadow: 4px 4px 50px 10px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(10px);
 
@@ -173,7 +173,7 @@
   align-items: center;
   justify-content: space-between;
   border-radius: 71px;
-  background-color: rgba(255, 255, 255, 0.03);
+  background-color: rgba(255, 255, 255, 0.03);;
   box-shadow: rgb(0 0 0 / 25%) 4px 4px 50px 10px;
   backdrop-filter: blur(10px);
 }
@@ -235,7 +235,7 @@
   width: 100px;
 
   border-radius: 100%;
-  background-color: rgba(255, 255, 255, 0.03);
+  background-color: rgba(255, 255, 255, 0.03);;
   box-shadow: 4px 4px 50px 10px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(10px);
 
@@ -277,7 +277,7 @@
   width: 100px;
 
   border-radius: 100%;
-  background-color: rgba(255, 255, 255, 0.03);
+  background-color: rgba(255, 255, 255, 0.03);;
   box-shadow: 4px 4px 50px 10px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(10px);
 
@@ -303,7 +303,7 @@
   justify-content: center;
 
   border-radius: 71px;
-  background-color: rgba(255, 255, 255, 0.03);
+  background-color: rgba(255, 255, 255, 0.03);;
   box-shadow: 4px 4px 50px 10px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(10px);
 }
