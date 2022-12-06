@@ -12,17 +12,26 @@
 
 ;;------------------- scroll magic -----------------------------
 
+(defn tween-inner [component random-id]
+  [:div {:class random-id} component])
+ 
+(defn tween-container [component random-id x]
+ [:> Tween
+     {:from {:x x}   ;nem lehet csak a from-ot hasznalni mert nem toltotdik be
+      :to {:x 0 
+           :scrollTrigger {:trigger (str "." random-id)
+                                :start "-100px center"
+                                :end "180px center"
+                                :scrub 1.5}}}
+                           ;;  :markers "true"}}}
+  [:div [tween-inner component random-id]]])
+                            
 
 (defn tween-wrapper [{:keys [component x]}]
   (let [random-id (str "tween-" (random-uuid))]
-    [:> Tween
-     {:from {:x x
-             :scrollTrigger {:trigger (str "." random-id)
-                             :start "-100px center"
-                             :end "180 center"
-                             :scrub 1.5}}}
-                            ;;  :markers "true"}}}
-     [:div {:class random-id} component]]))
+   [tween-container component random-id x]))
+    
+     
 
 
 ;;------------------- atom functions -----------------------------
@@ -30,8 +39,8 @@
 ;   (reset! page new-page))
 
 ;;-----------------------------
-(defn its-me []
-  [:img.itsme {:src "/images/itsme.jpg"}])
+(defn scroll-down-arrow []
+  [:img.scrolldownarrow {:src "/images/arrow_down.svg"}])
 
 ;;------------------- button arrows ----------------------------
 (defn arrow-back [] 
@@ -131,13 +140,8 @@
                   "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
                   "/my-hobbies"]
       :x "-100vw"}]
+  
 
-   
-
-   
-
-   
-;;------------------- contacts footer -----------------------------
    [footer]])
 
 ;;------------------- mobile card -----------------------------
@@ -187,75 +191,80 @@
   [:div.max-width-container
    [:div.title "Hello friend!"]
    [:div.subtitle
-    [:div "My name is Marci"]
-    [:div "and this is my portfolio!"]]
-    ; [:div.itsme-container [its-me]]]
+    [:div "My name is Marton"]
+    [:div "and this is my portfolio!"]
+    [:div.scrolldownarrow-container "scroll down"
+     [scroll-down-arrow]]]
    [mobile-card-container]
    [card-container]])
 
 (defn about-me []
-  [:div.max-width-container
-   [:div.subpage-container
-    [:div.subpage-card-title "ABOUT ME"]
-    [:div.subpage-card
-     [:div.inner-text "//ABOUT ME// Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]]
-    [:div.page-button-container 
-     [:a.page-arrow {:href "/"}
-      [:div.page-arrow-inner-container
-       [arrow-back]
-       [:div.button-text-left "MAIN"]]] 
-     [:a.page-arrow {:href "/my-skills"}
-      [:div.page-arrow-inner-container
-       [:div.button-text-right "NEXT  "]
-       [arrow-forward]]]]]]) 
+  [:div.loading-animation-subpages
+    [:div.max-width-container
+     [:div.subpage-container
+      [:div.subpage-card-title "ABOUT ME"]
+      [:div.subpage-card
+       [:div.inner-text "//ABOUT ME// Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]]
+      [:div.page-button-container 
+       [:a.page-arrow {:href "/"}
+        [:div.page-arrow-inner-container
+         [arrow-back]
+         [:div.button-text-left "MAIN"]]] 
+       [:a.page-arrow {:href "/my-skills"}
+        [:div.page-arrow-inner-container
+         [:div.button-text-right "NEXT  "]
+         [arrow-forward]]]]]]]) 
 
 (defn my-skills []
-  [:div.max-width-container
-   [:div.subpage-container
-    [:div.subpage-card-title "MY SKILLS"]
-    [:div.subpage-card
-     [:div.inner-text "//MY SKILLS// Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]]
-    [:div.page-button-container
-     [:a.page-arrow {:href "/about-me"}
-      [:div.page-arrow-inner-container
-       [arrow-back]
-       [:div.button-text-left "BACK"]]]
-     [:a.page-arrow {:href "/my-goals"}
-      [:div.page-arrow-inner-container
-       [:div.button-text-right "NEXT"]
-       [arrow-forward]]]]]])
+  [:div.loading-animation-subpages
+    [:div.max-width-container
+     [:div.subpage-container
+      [:div.subpage-card-title "MY SKILLS"]
+      [:div.subpage-card
+       [:div.inner-text "//MY SKILLS// Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]]
+      [:div.page-button-container
+       [:a.page-arrow {:href "/about-me"}
+        [:div.page-arrow-inner-container
+         [arrow-back]
+         [:div.button-text-left "BACK"]]]
+       [:a.page-arrow {:href "/my-goals"}
+        [:div.page-arrow-inner-container
+         [:div.button-text-right "NEXT"]
+         [arrow-forward]]]]]]])
 
 (defn my-goals []
-  [:div.max-width-container
-   [:div.subpage-container
-    [:div.subpage-card-title "MY GOALS"]
-    [:div.subpage-card
-     [:div.inner-text "//MY GOALS// Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]]
-    [:div.page-button-container
-     [:a.page-arrow {:href "/my-skills"}
-      [:div.page-arrow-inner-container
-       [arrow-back]
-       [:div.button-text-left "BACK"]]]
-     [:a.page-arrow {:href "/my-hobbies"}
-      [:div.page-arrow-inner-container
-       [:div.button-text-right "NEXT"]
-       [arrow-forward]]]]]])
+  [:div.loading-animation-subpages
+    [:div.max-width-container
+     [:div.subpage-container
+      [:div.subpage-card-title "MY GOALS"]
+      [:div.subpage-card
+       [:div.inner-text "//MY GOALS// Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]]
+      [:div.page-button-container
+       [:a.page-arrow {:href "/my-skills"}
+        [:div.page-arrow-inner-container
+         [arrow-back]
+         [:div.button-text-left "BACK"]]]
+       [:a.page-arrow {:href "/my-hobbies"}
+        [:div.page-arrow-inner-container
+         [:div.button-text-right "NEXT"]
+         [arrow-forward]]]]]]])
 
 (defn my-hobbies []
-  [:div.max-width-container
-   [:div.subpage-container
-    [:div.subpage-card-title "MY HOBBIES"]
-    [:div.subpage-card
-     [:div.inner-text "//MY HOBBIES// Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]]
-    [:div.page-button-container
-     [:a.page-arrow {:href "/my-goals"}
-      [:div.page-arrow-inner-container
-       [arrow-back]
-       [:div.button-text-left "BACK"]]]
-     [:a.page-arrow {:href "/"}
-      [:div.page-arrow-inner-container
-       [:div.button-text-right "MAIN"]
-       [arrow-forward]]]]]])
+  [:div.loading-animation-subpages
+    [:div.max-width-container
+     [:div.subpage-container
+      [:div.subpage-card-title "MY HOBBIES"]
+      [:div.subpage-card
+       [:div.inner-text "//MY HOBBIES// Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]]
+      [:div.page-button-container
+       [:a.page-arrow {:href "/my-goals"}
+        [:div.page-arrow-inner-container
+         [arrow-back]
+         [:div.button-text-left "BACK"]]]
+       [:a.page-arrow {:href "/"}
+        [:div.page-arrow-inner-container
+         [:div.button-text-right "MAIN"]
+         [arrow-forward]]]]]]])
 
 ;;/////////////// home page architecture /////////////////////////////////////////
 
