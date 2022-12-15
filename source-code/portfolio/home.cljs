@@ -116,14 +116,19 @@
    [tween-wrapper
     {:component
       [right-card "ABOUT ME"
-                    "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+                    "Hi, my name is Marton Gergelyi. I am 22 years old, a university student.
+                          I was born in Hungary. I speaking Hungarian fluently, but I also speak English at a high level.
+                          I have been interested in information technology and creative design for several years."
                     "/about-me"]
       :x "100vw"}]
    
    [tween-wrapper
     {:component
       [left-card "MY SKILLS"
-                  "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+                  "In 2020, I started university in Szeged, Hungary, where for the first time,
+                    I studied in the field of software/program design engineering,
+                    then switched to IT engineering. During this time, I learned about network building,
+                    web development, database management and several programming languages."
                   "/my-skills"]
       :x "-100vw"}]
    
@@ -204,7 +209,15 @@
      [:div.subpage-container
       [:div.subpage-card-title "ABOUT ME"]
       [:div.subpage-card
-       [:div.inner-text "//ABOUT ME// Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]]
+       [:div.inner-text "Hi, my name is Marton Gergelyi. I am 22 years old, a university student.
+                          I was born in Hungary. I speaking Hungarian fluently, but I also speak English at a high level.
+                          I have been interested in information technology and creative design for several years.
+                          I tested my creativity in many areas, but I see a great career
+                          in web development and IT security.
+                          The programming is a new mile stone for me. In my opinion, it is unavoidable, that
+                          one day the majority of people will know at least one programming language.
+                          I consider myself a hardworking, flexible and quick learner person, who works hard
+                          in a team or even alone."]]
       [:div.page-button-container 
        [:a.page-arrow {:href "/"}
         [:div.page-arrow-inner-container
@@ -221,7 +234,15 @@
      [:div.subpage-container
       [:div.subpage-card-title "MY SKILLS"]
       [:div.subpage-card
-       [:div.inner-text "//MY SKILLS// Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]]
+       [:div.inner-text "In 2020, I started university in Szeged, Hungary, where for the first time,
+                          I studied in the field of software/program design engineering,
+                          then switched to IT engineering. During this time, I learned about network building,
+                          web development, database management and several programming languages
+                          both in a team and independently, for example Python, Scala, Javascript, C/C++, HTML and CSS.
+                          My basic skills include the use of git and terminal, kanban and agile development methods.
+                          I am currently training myself in Clojure and Clojurescript and am also learning web design.
+                          In September 2022, I moved in Ireland to acquire international language skills
+                          in addition to what I learned at school and find IT courses that suit my interests."]]
       [:div.page-button-container
        [:a.page-arrow {:href "/about-me"}
         [:div.page-arrow-inner-container
