@@ -135,7 +135,11 @@
    [tween-wrapper
     {:component
       [right-card "MY GOALS"
-                  "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+                  "My goal is to learn and develop. This moves me forward to become a Fullstack web developer,
+                    until then I would like to test myself in as many areas as possible.
+                    For this goal, I am willing to travel within the country or even between countries.
+                    The goal is to find a cooperative, understanding and friendly team with whom I can work.
+                    I don't shy away from the big corporate environment either."
                   "/my-goals"]
       :x "100vw"}]
    
@@ -259,7 +263,15 @@
      [:div.subpage-container
       [:div.subpage-card-title "MY GOALS"]
       [:div.subpage-card
-       [:div.inner-text "//MY GOALS// Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]]
+       [:div.inner-text "My goal is to learn and develop. This moves me forward to become a Fullstack web developer,
+                          until then I would like to test myself in as many areas as possible.
+                          For this goal, I am willing to travel within the country or even between countries.
+                          The goal is to find a cooperative, understanding and friendly team with whom I can work.
+                          I don't shy away from the big corporate environment either.
+                          but I would gladly work for smaller companies at the same time. Creative work is ideal for me,
+                          as in programming and in private life.
+                          I am also interested in IT security, so I do not rule it out
+                          the possibility of getting a job as an ethical hacker."]]
       [:div.page-button-container
        [:a.page-arrow {:href "/my-skills"}
         [:div.page-arrow-inner-container
