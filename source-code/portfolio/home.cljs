@@ -146,7 +146,10 @@
    [tween-wrapper
     {:component
       [left-card "MY HOBBIES"
-                  "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+                  "In addition to programming, I also deal with music. I write lyrics, compose music
+                    and I mix. I've been writing lyrics for about a decade, but I've only been writing lyrics for music for 3 years.
+                    In 2019, I played in a band as a bass guitarist and singer, and then independently
+                    I started my career as a hip-hop artist."
                   "/my-hobbies"]
       :x "-100vw"}]
   
@@ -268,7 +271,7 @@
                           For this goal, I am willing to travel within the country or even between countries.
                           The goal is to find a cooperative, understanding and friendly team with whom I can work.
                           I don't shy away from the big corporate environment either.
-                          but I would gladly work for smaller companies at the same time. Creative work is ideal for me,
+                          I would gladly work for smaller companies at the same time. Creative work is ideal for me,
                           as in programming and in private life.
                           I am also interested in IT security, so I do not rule it out
                           the possibility of getting a job as an ethical hacker."]]
@@ -288,7 +291,14 @@
      [:div.subpage-container
       [:div.subpage-card-title "MY HOBBIES"]
       [:div.subpage-card
-       [:div.inner-text "//MY HOBBIES// Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]]
+       [:div.inner-text "In addition to programming, I also deal with music. I write lyrics, compose music
+                          and I mix. I've been writing lyrics for about a decade, but I've only been writing lyrics for music for 3 years.
+                          In 2019, I played in a band as a bass guitarist and singer, and then independently
+                          I started my career as a hip-hop artist. I started mixing in 2022 and later
+                          also working with music composing softwares. Ableton is such an example. Hip-hop is not the only genre
+                          that keeps me engaged. The world of Drum and Bass showed me a new sound that is enough
+                          complex and energetic to always be able to show something new. At the moment I have two names,
+                          it's on soundcloud and youtube."]]
       [:div.page-button-container
        [:a.page-arrow {:href "/my-goals"}
         [:div.page-arrow-inner-container
