@@ -171,19 +171,44 @@
 (defn mobile-card-container []
   [:div.mobile-card-container
    [mobile-card "ABOUT ME"
-                "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+                "Hi, my name is Marton Gergelyi. I am 22 years old, a university student.
+                          I was born in Hungary. I speaking Hungarian fluently, but I also speak English at a high level.
+                          I have been interested in information technology and creative design for several years."
                 "/about-me"]
 
    [mobile-card "MY SKILLS"
-                "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+                "In 2020, I started university in Szeged, Hungary, where for the first time,
+                          I studied in the field of software/program design engineering,
+                          then switched to IT engineering. During this time, I learned about network building,
+                          web development, database management and several programming languages
+                          both in a team and independently, for example Python, Scala, Javascript, C/C++, HTML and CSS.
+                          My basic skills include the use of git and terminal, kanban and agile development methods.
+                          I am currently training myself in Clojure and Clojurescript and am also learning web design.
+                          In September 2022, I moved in Ireland to acquire international language skills
+                          in addition to what I learned at school and find IT courses that suit my interests."
                 "/my-skills"]
 
    [mobile-card "MY GOALS"
-                "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+                "My goal is to learn and develop. This moves me forward to become a Fullstack web developer,
+                          until then I would like to test myself in as many areas as possible.
+                          For this goal, I am willing to travel within the country or even between countries.
+                          The goal is to find a cooperative, understanding and friendly team with whom I can work.
+                          I don't shy away from the big corporate environment either.
+                          I would gladly work for smaller companies at the same time. Creative work is ideal for me,
+                          as in programming and in private life.
+                          I am also interested in IT security, so I do not rule it out
+                          the possibility of getting a job as an ethical hacker."
                 "/my-goals"]
 
    [mobile-card "MY HOBBIES"
-                "Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+                "In addition to programming, I also deal with music. I write lyrics, compose music
+                          and I mix. I've been writing lyrics for about a decade, but I've only been writing lyrics for music for 3 years.
+                          In 2019, I played in a band as a bass guitarist and singer, and then independently
+                          I started my career as a hip-hop artist. I started mixing in 2022 and later
+                          also working with music composing softwares. Ableton is such an example. Hip-hop is not the only genre
+                          that keeps me engaged. The world of Drum and Bass showed me a new sound that is enough
+                          complex and energetic to always be able to show something new. At the moment I have two names,
+                          it's on soundcloud and youtube."
                 "/my-hobbies"]
    [footer]])
 
