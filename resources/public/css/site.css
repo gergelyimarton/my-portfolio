@@ -499,7 +499,7 @@ a:active {
 }
 .subpage-card-title{
    color: #5f252599;
-   font-size: 50px;
+   font-size: 40px;
    padding: 25px 25px;
    white-space: nowrap;
   }
@@ -511,7 +511,7 @@ a:active {
   }
   .inner-text{
     color: #1F1F1F;
-    font-size: 17px;
+    font-size: 15px;
     line-height: 21px;
     text-shadow: 2px 2px 3px rgb(0 0 0 / 20%);
     text-align: center;
@@ -519,7 +519,7 @@ a:active {
   }
   .page-button-container{
     gap: 10px;
-    padding-top: 20px;
+    padding-top: 25px;
   }
   .page-arrow{
     height: 50px;
