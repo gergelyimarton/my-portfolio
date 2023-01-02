@@ -73,7 +73,7 @@
 
   border-radius: 100px;
   background-color: rgba(255, 255, 255, 0.03);;
-  box-shadow: 4px 4px 50px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 4px 4px 50px 5px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(10px);
   cursor: pointer;
   transition: 1s ease;
@@ -104,7 +104,7 @@
 
   border-radius: 71px;
   background-color: rgba(255, 255, 255, 0.03);;
-  box-shadow: 4px 4px 50px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 4px 4px 50px 5px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(10px);
 }
 /* ------------------- mobile card -------------------- */
@@ -121,7 +121,7 @@
   padding-bottom: 10px;
 }
 .mobile-card{
-  height: 257px;
+  /* height: 257px; */
   width: 210px;
   display: flex;
   flex-direction: row;
@@ -134,12 +134,13 @@
 }
 .mobile-inner-text{
   color: #1F1F1F;
-  height: 220px;
+  /* height: 220px; */
   width: 180px;
   font-size: 15px;
   line-height: 20px;
   text-shadow: 2px 2px 3px rgb(0 0 0 / 20%);
   text-align: center;
+  padding: 17px 0px;
 }
 .mobile-button {
   display: flex;
@@ -266,8 +267,9 @@
   color: #1F1F1F;
   font-size: 28px;
   line-height: 32px;
-  padding: 40px;
+  padding: 35px;
   text-shadow: 2px 2px 5px rgb(0 0 0 / 20%);
+  text-align: center;
 }
 .button-right {
   display: flex;
@@ -505,8 +507,8 @@ a:active {
   }
 
   .subpage-card{
-    height: 600px;
-    width: 250px;
+    /* height: 600px; */
+    width: 90%;
     border-radius: 30px;
   }
   .inner-text{
@@ -515,7 +517,7 @@ a:active {
     line-height: 21px;
     text-shadow: 2px 2px 3px rgb(0 0 0 / 20%);
     text-align: center;
-    padding: 0px 20px;
+    padding: 10px 20px;
   }
   .page-button-container{
     gap: 10px;

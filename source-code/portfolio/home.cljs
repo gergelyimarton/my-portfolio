@@ -147,7 +147,7 @@
     {:component
       [left-card "MY HOBBIES"
                   "In addition to programming, I also deal with music. I write lyrics, compose music
-                    and I mix. I've been writing lyrics for about a decade, but I've only been writing lyrics for music for 3 years.
+                    and I mix. I've been writing poems for about a decade, but I've only been writing lyrics for music for 3 years.
                     In 2019, I played in a band as a bass guitarist and singer, and then independently
                     I started my career as a hip-hop artist."
                   "/my-hobbies"]
@@ -191,7 +191,7 @@
 
    [mobile-card "MY HOBBIES"
                 "In addition to programming, I also deal with music. I write lyrics, compose music
-                          and I mix. I've been writing lyrics for about a decade.
+                          and I mix. I've been writing poems for about a decade.
                           In 2019, I played in a band as a bass guitarist and singer, and then independently
                           I started my career as a hip-hop artist."
                 "/my-hobbies"]
@@ -302,7 +302,7 @@
       [:div.subpage-card-title "MY HOBBIES"]
       [:div.subpage-card
        [:div.inner-text "In addition to programming, I also deal with music. I write lyrics, compose music
-                          and I mix. I've been writing lyrics for about a decade, but I've only been writing lyrics for music for 3 years.
+                          and I mix. I've been writing poems for about a decade, but I've only been writing lyrics for music for 3 years.
                           In 2019, I played in a band as a bass guitarist and singer, and then independently
                           I started my career as a hip-hop artist. I started mixing in 2022 and later
                           also working with music composing softwares. Ableton is such an example. Hip-hop is not the only genre
