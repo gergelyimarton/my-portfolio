@@ -23,7 +23,7 @@
                                 :start "-100px center"
                                 :end "180px center"
                                 :scrub 1.5}}}
-                           ;;  :markers "true"}}}
+                                ;;  :markers "true"}}}
   [:div [tween-inner component random-id]]])
                             
 
