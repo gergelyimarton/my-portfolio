@@ -23,3 +23,4 @@ pom.xml.asc
 .DS_Store
 resources/backend
 resources/frontend/js
+prod
