@@ -1,15 +1,28 @@
-{:builds
- {:app        {:asset-path         "/js/core"
-               :devtools           {:watch-dir "resources/public"
-                                    :after-load    genesis.frontend/render-app!}
-               :modules            {:app {:init-fn genesis.frontend/start-app!}}
-               :output-dir         "resources/public/js/core"
-               :compiler-options   {:infer-externs :auto}
-               :target             :browser}
-  
-  :app-ready  {:modules            {:app {:init-fn genesis.frontend/start-app!}}
-               :compiler-options   {:infer-externs :auto}
-               :optimizations      :advanced
-               :asset-path         "/js/core"
-               :output-dir         "resources/public/js/core"
-               :target             :browser}}}
+
+{:source-paths ["source-code"]
+ :dependencies [[cider/cider-nrepl "0.21.1"]]
+ :builds {:backend {:target :node-script
+                    :output-to "resources/backend/core.js"
+                    :main backend.server/start!
+                    :compiler-options {:infer-externs :auto}}
+          :frontend {:target :browser
+                     :output-dir "resources/frontend/js"
+                     :modules {:core {:init-fn frontend.core/start!}}
+                     :compiler-options {:infer-externs :auto}
+                     :devtools         {:watch-dir "resources/frontend"
+                                        :after-load    frontend.core/start!
+                                        :preloads [day8.re-frame-10x.preload]}
+                     :dev                {:compiler-options {:closure-defines
+                                                             {re-frame.trace.trace-enabled?        true
+                                                              day8.re-frame.tracing.trace-enabled? true}}}}
+          :frontend-ready  {:modules            {:core {:init-fn frontend.core/start!}}
+                            :compiler-options   {:infer-externs :auto
+                                                 :optimizations      :advanced}
+                            :output-dir         "prod/resources/frontend/js"
+                            :target             :browser}
+          :backend-ready {:target :node-script
+                          :output-to "prod/core.js"
+                          :main backend.server/start!
+                          :compiler-options {:infer-externs :auto
+                                             :optimizations      :advanced}}}}
+

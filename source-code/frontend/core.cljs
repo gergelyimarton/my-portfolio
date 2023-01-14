@@ -1,6 +1,6 @@
-(ns index.core
+(ns frontend.core
   (:require
-   [portfolio.core :as portfolio]
+   [frontend.portfolio.core :as portfolio]
    [reagent.core :as reagent :refer [atom]]
    [reagent.dom :as rdom]
    [reagent.session :as session]
@@ -31,19 +31,19 @@
 (defn render-app! []
   (rdom/render [app] (.getElementById js/document "app")))
 
-(defn start-app! []
+(defn start! []
   (clerk/initialize!)
   (accountant/configure-navigation!
    {:nav-handler (fn [path]
-                  (let [match (reitit/match-by-path router path)
-                        current-page (:name (:data  match))
-                        route-params (:path-params match)]
-                    (session/put! :route {:current-page current-page
-                                          :route-params route-params})
-                    (reagent/after-render clerk/after-render!)
-                    (clerk/navigate-page! path)))
+                   (let [match (reitit/match-by-path router path)
+                         current-page (:name (:data  match))
+                         route-params (:path-params match)]
+                     (session/put! :route {:current-page current-page
+                                           :route-params route-params})
+                     (reagent/after-render clerk/after-render!)
+                     (clerk/navigate-page! path)))
 
     :path-exists? (fn [path]
-                   (boolean (reitit/match-by-path router path)))})
+                    (boolean (reitit/match-by-path router path)))})
   (accountant/dispatch-current!)
   (render-app!))

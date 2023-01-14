@@ -1,4 +1,4 @@
-(ns portfolio.home
+(ns frontend.portfolio.home
 
   (:require 
    ["react-parallax" :refer (Parallax)]
