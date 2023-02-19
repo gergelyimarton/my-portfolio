@@ -7,6 +7,7 @@
    [reitit.frontend :as reitit]
    [clerk.core :as clerk]
    [accountant.core :as accountant]))
+   
 
 
 ;; -------------------------
@@ -23,6 +24,7 @@
 
 
 (defn app []
+  ;; [game/view]
   [portfolio/view])
 
 ;; -------------------------
