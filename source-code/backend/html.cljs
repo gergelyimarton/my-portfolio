@@ -17,6 +17,11 @@
 (defn template []
   [:html
    [:head
+    [:title "My portfolio"]
+    [:link {:type "image/png",
+            :href "/images/circle-favicon.svg",
+            :rel "icon"}]
+    
     [:meta {:charset "utf-8"}]
     [:meta {:name    "viewport"
             :content "width=device-width, initial-scale=1.0"}]
