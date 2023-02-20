@@ -10,6 +10,7 @@
    ["gsap/dist/ScrollTrigger" :refer (ScrollTrigger)]))
   ;;  ["aos" :refer AOS]))
 
+
 ;;------------------- scroll magic -----------------------------
 
 (defn tween-inner [component random-id]
@@ -117,7 +118,7 @@
     {:component
       [right-card "ABOUT ME"
                     "Hi, my name is Marton Gergelyi. I am 22 years old, a university student.
-                          I was born in Hungary. I speaking Hungarian fluently, but I also speak English at a high level.
+                          I was born in Hungary. I am speaking Hungarian fluently, but I also speak English at a high level.
                           I have been interested in information technology and creative design for several years."
                     "/about-me"]
       :x "100vw"}]
@@ -172,7 +173,7 @@
   [:div.mobile-card-container
    [mobile-card "ABOUT ME"
                 "Hi, my name is Marton Gergelyi. I am 22 years old, a university student.
-                          I was born in Hungary. I speaking Hungarian fluently, but I also speak English at a high level.
+                          I was born in Hungary. I am speaking Hungarian fluently, but I also speak English at a high level.
                           I have been interested in information technology and creative design for several years."
                 "/about-me"]
 
@@ -227,7 +228,7 @@
       [:div.subpage-card-title "ABOUT ME"]
       [:div.subpage-card
        [:div.inner-text "Hi, my name is Marton Gergelyi. I am 22 years old, a university student.
-                          I was born in Hungary. I speaking Hungarian fluently, but I also speak English at a high level.
+                          I was born in Hungary. I am speaking Hungarian fluently, but I also speak English at a high level.
                           I have been interested in information technology and creative design for several years.
                           I tested my creativity in many areas, but I see a great career
                           in web development and IT security.
@@ -319,15 +320,18 @@
          [:div.button-text-right "MAIN"]
          [arrow-forward]]]]]]])
 
+;;------------------- theme checker -----------------------------
+
+(def dark-theme? (.-matches (.matchMedia js/window "(prefers-color-scheme: dark)")))
+
 
 ;;------------------- pages background changer -----------------------------
 
 
 (defn decide-background [page]
  (case page
-         :main "/images/waves-1500x4000.svg"
-               "/images/blurry.svg"))
-
+         :main (if dark-theme? "/images/layered-1500x4000.svg" "/images/waves-1500x4000.svg")
+               (if dark-theme? "/images/blurry-dark.svg" "/images/blurry.svg")))
 
 
 
