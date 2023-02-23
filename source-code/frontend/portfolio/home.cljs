@@ -11,6 +11,24 @@
   ;;  ["aos" :refer AOS]))
 
 
+(defn scroll-to-cards []
+ (let [inner-height (.-innerHeight js/window)]
+  (.scrollTo js/window #js {:top inner-height
+                            :behavior "smooth"})
+                            
+       
+  (.log js/console inner-height)))
+
+
+;; (defn scroll-to-cards []
+;;   (let [element (js/document.getElementById "scroll-here")
+;;         rect (.getBoundingClientRect element)
+;;         top (.-top rect)]
+;;     (.log js/console top)
+;;     (.scrollIntoView element)))
+
+
+
 ;;------------------- scroll magic -----------------------------
 
 (defn tween-inner [component random-id]
@@ -42,8 +60,14 @@
 ;;-----------------------------
 (defn scroll-down-arrow []
   [:img.scrolldownarrow {:src "/images/arrow_down.svg"}])
+                         
 
 ;;------------------- button arrows ----------------------------
+(defn home-button []
+  [:img.home-button {:src "/images/home-button.svg"}])
+
+
+
 (defn arrow-back [] 
    [:img.arrow-pic-left {:src "/images/arrow_back_new.svg"}])
          ; :on-click #(change-page page)}])
@@ -209,6 +233,7 @@
    [nav-button "my-skills" "/my-skills"]
    [nav-button "my-goals" "/my-goals"]
    [nav-button "my-hobbies" "/my-hobbies"]])
+
 ;;------------------- pages (main ect..) -----------------------------
 (defn main-page []
   [:div.max-width-container
@@ -216,7 +241,8 @@
    [:div.subtitle
     [:div "My name is Marton"]
     [:div "and this is my portfolio!"]
-    [:div.scrolldownarrow-container "scroll down"
+    [:div.scrolldownarrow-container {:on-click (fn [e] (scroll-to-cards))}
+     "scroll down"
      [scroll-down-arrow]]]
    [mobile-card-container]
    [card-container]])
@@ -240,7 +266,7 @@
        [:a.page-arrow {:href "/"}
         [:div.page-arrow-inner-container
          [arrow-back]
-         [:div.button-text-left "MAIN"]]] 
+         [:div.button-text-left "MAIN"]]]
        [:a.page-arrow {:href "/my-skills"}
         [:div.page-arrow-inner-container
          [:div.button-text-right "NEXT  "]
@@ -266,6 +292,9 @@
         [:div.page-arrow-inner-container
          [arrow-back]
          [:div.button-text-left "BACK"]]]
+       [:a.page-home-button {:href "/"}
+        [:div.page-home-button-inner-container
+         [home-button]]]
        [:a.page-arrow {:href "/my-goals"}
         [:div.page-arrow-inner-container
          [:div.button-text-right "NEXT"]
@@ -291,6 +320,9 @@
         [:div.page-arrow-inner-container
          [arrow-back]
          [:div.button-text-left "BACK"]]]
+       [:a.page-home-button {:href "/"}
+        [:div.page-home-button-inner-container
+         [home-button]]]
        [:a.page-arrow {:href "/my-hobbies"}
         [:div.page-arrow-inner-container
          [:div.button-text-right "NEXT"]
@@ -324,16 +356,12 @@
 
 (def dark-theme? (.-matches (.matchMedia js/window "(prefers-color-scheme: dark)")))
 
-
 ;;------------------- pages background changer -----------------------------
-
 
 (defn decide-background [page]
  (case page
          :main (if dark-theme? "/images/layered-1500x4000.svg" "/images/waves-1500x4000.svg")
                (if dark-theme? "/images/blurry-dark.svg" "/images/blurry.svg")))
-
-
 
 
 ;;/////////////// home page architecture /////////////////////////////////////////

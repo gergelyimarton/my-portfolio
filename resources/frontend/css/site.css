@@ -1,13 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 body {
-  /* background-image: url('/images/background.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin: 0px; */
-  /* backdrop-filter: blur(10px);
-  margin-bottom: 0px;
-  padding: 10px; */
+  cursor: default;
+  user-select: none;
+
   font-family: 'Montserrat', Arial, sans-serif;
   line-height: 1.8em;
   margin: 0px;
@@ -25,12 +21,50 @@ body {
 
 
 /* ------------------- page arrow button -------------------- */
+.page-home-button{
+  display: flex; 
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  height: 100px;
+  width: 100px;
+
+  border-radius: 100px;
+  background-color: rgba(255, 255, 255, 0.03);;
+  box-shadow: 4px 4px 50px 5px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: 1s ease;
+  transform: scale(1);
+}
+.page-home-button:hover{
+  background-color: rgba(255, 255, 255, 0.70);
+  transform: scale(1.1);
+  transition: 1s ease;
+}
+.page-home-button:active{
+  transform: scale(0.9);
+  transition: 0.1s ease;
+}
+
+.home-button{
+  height: 80px;
+  width: 80px;
+  padding-bottom: 5px;
+}
+
+.page-home-button-inner-container{
+  display: flex;
+  align-items: center;
+}
+
 .page-button-container{
   display: flex;
   flex-direction: row;
   align-content: space-between;
   align-items: center;
-  gap: 600px;
+  gap: 300px;
   padding-top: 30px;
 }
 
@@ -38,6 +72,7 @@ body {
   display: flex;
   align-items: center;
 }
+
 
 .arrow-pic-right{
   padding-left: 13px;
@@ -363,14 +398,29 @@ body {
   align-items: center;
 
   font-size: 25px;
+
+  cursor: pointer;
 }
 .scrolldownarrow{
   height: 100px;
   width: 100px;
   margin-top: -10px;
-  filter: invert(0.7);
   /* border-radius: 100%;
   border: 3px solid #383838; */
+  padding-top: 110px;
+  animation-name: scrollArrow;
+  animation-iteration-count: infinite;
+  animation-duration: 2.5s;
+  position: absolute;
+  animation-direction: reverse;
+}
+
+@keyframes scrollArrow {
+  0%   {transform: translateY(0px);}
+  /* 25%  {transform: translateY(-15px);} */
+  50%  {transform: translateY(25px);}
+  /* 75%  {transform: translateY(15px);} */
+  100% {transform: translateY(0px);}
 }
 /* ------------------- loading screen -------------------- */
 .loading-animation{
@@ -553,12 +603,13 @@ a:active {
 @media (prefers-color-scheme: dark){
   body {
     color: #aaaaaa !important;
+    background-color: black;
   }
   .mobile-card-title{
     color: #c900b5;
   }
   .subpage-card-title{
-    color: #c900b5;
+    color: #c900b599;
   }
   .left-card-title{
     color: #c900b5;
@@ -585,6 +636,8 @@ a:active {
   a:active {
     color: rgb(54, 235, 255);
   }
-
+.scrolldownarrow{
+  filter: invert(0.7);
+}
   
 }
