@@ -3,4 +3,4 @@
 
 (def port 3000)
 
-(def version "0.3")
+(def version "0.4")

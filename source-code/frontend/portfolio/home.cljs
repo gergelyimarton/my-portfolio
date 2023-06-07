@@ -86,7 +86,6 @@
                       :width "70px"}}])
          ; :on-click #(change-page page)}])
 
-
 ;;------------------- footer images -----------------------------
 (defn github []
   [:a.link {:href "https://github.com/gergelyimarton"}
@@ -141,40 +140,34 @@
    [tween-wrapper
     {:component
       [right-card "ABOUT ME"
-                    "Hi, my name is Marton Gergelyi. I am 22 years old, a university student.
-                          I was born in Hungary. I am speaking Hungarian fluently, but I also speak English at a high level.
-                          I have been interested in information technology and creative design for several years."
+                    "Hi, my name is Marton Gergelyi, and I am a 22-year-old university student. I was born in Hungary and I am fluent in Hungarian. 
+                     Additionally, I have a high level of proficiency in English.
+                    For several years, I have been deeply interested in information technology and creative design..."
                     "/about-me"]
       :x "100vw"}]
    
    [tween-wrapper
     {:component
       [left-card "MY SKILLS"
-                  "In 2020, I started university in Szeged, Hungary, where for the first time,
-                    I studied in the field of software/program design engineering,
-                    then switched to IT engineering. During this time, I learned about network building,
-                    web development, database management and several programming languages."
+                  "In 2020, I embarked on my university journey in Szeged, Hungary, focusing initially on software designing before transitioning to IT engineering. 
+                   Throughout my studies, I gained valuable knowledge in various areas such as network building, web development, database management, and proficiency in several programming languages..."
                   "/my-skills"]
       :x "-100vw"}]
    
    [tween-wrapper
     {:component
       [right-card "MY GOALS"
-                  "My goal is to learn and develop. This moves me forward to become a Fullstack web developer,
-                    until then I would like to test myself in as many areas as possible.
-                    For this goal, I am willing to travel within the country or even between countries.
-                    The goal is to find a cooperative, understanding and friendly team with whom I can work.
-                    I don't shy away from the big corporate environment either."
+                  "My ultimate ambition is to become a Fullstack web developer, and I am dedicated to continuously learning and growing in this field. 
+                   Along the way, I am eager to explore diverse areas and challenge myself to broaden my skill set. 
+                   I am open to traveling within my country or even internationally to pursue opportunities that align with my aspirations..."
                   "/my-goals"]
       :x "100vw"}]
    
    [tween-wrapper
     {:component
       [left-card "MY HOBBIES"
-                  "In addition to programming, I also deal with music. I write lyrics, compose music
-                    and I mix. I've been writing poems for about a decade, but I've only been writing lyrics for music for 3 years.
-                    In 2019, I played in a band as a bass guitarist and singer, and then independently
-                    I started my career as a hip-hop artist."
+                  "In addition to my passion for programming, I also have a deep involvement in music. For over a decade, I have been writing poems, and more recently, 
+                   I have delved into writing lyrics for music. Within the past three years, I have focused on honing my skills in this area..."
                   "/my-hobbies"]
       :x "-100vw"}]
   
@@ -196,29 +189,25 @@
 (defn mobile-card-container []
   [:div.mobile-card-container
    [mobile-card "ABOUT ME"
-                "Hi, my name is Marton Gergelyi. I am 22 years old, a university student.
-                          I was born in Hungary. I am speaking Hungarian fluently, but I also speak English at a high level.
-                          I have been interested in information technology and creative design for several years."
+                "Hi, my name is Marton Gergelyi, and I am a 22-year-old university student. I was born in Hungary and I am fluent in Hungarian. 
+                 Additionally, I have a high level of proficiency in English.
+                 For several years, I have been deeply interested in information technology and creative design..."
                 "/about-me"]
 
    [mobile-card "MY SKILLS"
-                "In 2020, I started university in Szeged, Hungary, where for the first time,
-                          I studied in the field of software/program design engineering. During this time, I learned about network building,
-                          web development, database management and several programming languages."
+                "In 2020, I embarked on my university journey in Szeged, Hungary, focusing initially on software designing before transitioning to IT engineering. 
+                         Throughout my studies, I gained valuable knowledge in various areas such as network building, web development, database management, and proficiency in several programming languages..."
                 "/my-skills"]
 
    [mobile-card "MY GOALS"
-                "My goal is to learn and develop. This moves me forward to become a Fullstack web developer,
-                          until then I would like to test myself in as many areas as possible.
-                          For this goal, I am willing to travel within the country or even between countries.
-                          I am also interested in hacking."
+                "My ultimate ambition is to become a Fullstack web developer, and I am dedicated to continuously learning and growing in this field. 
+                   Along the way, I am eager to explore diverse areas and challenge myself to broaden my skill set. 
+                   I am open to traveling within my country or even internationally to pursue opportunities that align with my aspirations..."
                 "/my-goals"]
 
    [mobile-card "MY HOBBIES"
-                "In addition to programming, I also deal with music. I write lyrics, compose music
-                          and I mix. I've been writing poems for about a decade.
-                          In 2019, I played in a band as a bass guitarist and singer, and then independently
-                          I started my career as a hip-hop artist."
+                "In addition to my passion for programming, I also have a deep involvement in music. For over a decade, I have been writing poems, and more recently, 
+                   I have delved into writing lyrics for music. Within the past three years, I have focused on honing my skills in this area..."
                 "/my-hobbies"]
    [footer]])
 
@@ -253,15 +242,11 @@
      [:div.subpage-container
       [:div.subpage-card-title "ABOUT ME"]
       [:div.subpage-card
-       [:div.inner-text "Hi, my name is Marton Gergelyi. I am 22 years old, a university student.
-                          I was born in Hungary. I am speaking Hungarian fluently, but I also speak English at a high level.
-                          I have been interested in information technology and creative design for several years.
-                          I tested my creativity in many areas, but I see a great career
-                          in web development and IT security.
-                          The programming is a new mile stone for me. In my opinion, it is unavoidable, that
-                          one day the majority of people will know at least one programming language.
-                          I consider myself a hardworking, flexible and quick learner person, who works hard
-                          in a team or even alone."]]
+       [:div.inner-text
+        [:div.text-separator "Hi, my name is Marton Gergelyi, and I am a 22-year-old university student. I was born in Hungary and I am fluent in Hungarian. Additionally, I have a high level of proficiency in English."]
+        [:div.text-separator "For several years, I have been deeply interested in information technology and creative design. I have explored my creativity in various fields, but I have found a strong passion and potential career path in web development and IT security."]
+        [:div.text-separator "Programming has become a significant milestone in my journey. I firmly believe that in the near future, it will be essential for the majority of people to have at least a basic understanding of programming languages."]
+        [:div "As an individual, I am diligent, adaptable, and a quick learner. I am comfortable working both collaboratively as part of a team and independently. I always strive to consistently deliver excellent results."]]]
       [:div.page-button-container 
        [:a.page-arrow {:href "/"}
         [:div.page-arrow-inner-container
@@ -278,15 +263,14 @@
      [:div.subpage-container
       [:div.subpage-card-title "MY SKILLS"]
       [:div.subpage-card
-       [:div.inner-text "In 2020, I started university in Szeged, Hungary, where for the first time,
-                          I studied in the field of software/program design engineering,
-                          then switched to IT engineering. During this time, I learned about network building,
-                          web development, database management and several programming languages
-                          both in a team and independently, for example Python, Scala, Javascript, C/C++, HTML and CSS.
-                          My basic skills include the use of git and terminal, kanban and agile development methods.
-                          I am currently training myself in Clojure and Clojurescript and am also learning web design.
-                          In September 2022, I moved in Ireland to acquire international language skills
-                          in addition to what I learned at school and find IT courses that suit my interests."]]
+       [:div.inner-text
+        [:div.text-separator "In 2020, I embarked on my university journey in Szeged, Hungary, focusing initially on software designing before transitioning to IT engineering. 
+               Throughout my studies, I gained valuable knowledge in various areas such as network building, web development, database management, and proficiency in several programming languages. 
+               I honed these skills both independently and as part of a team, working with languages such as Python, Scala, JavaScript, C/C++, HTML, and CSS."]
+        [:div.text-separator "Alongside programming, I have developed a solid foundation in utilizing tools like git and terminal, as well as employing Kanban and agile development methodologies. 
+               Currently, I am further enhancing my expertise by training in Clojure and ClojureScript, while also expanding my knowledge in web design."]
+        [:div "In September 2022, I relocated to Ireland to enhance my language skills on an international level and seek out IT courses that align with my interests. 
+               This move has allowed me to supplement my education and explore opportunities beyond what I have learned in school."]]]
       [:div.page-button-container
        [:a.page-arrow {:href "/about-me"}
         [:div.page-arrow-inner-container
@@ -306,15 +290,16 @@
      [:div.subpage-container
       [:div.subpage-card-title "MY GOALS"]
       [:div.subpage-card
-       [:div.inner-text "My goal is to learn and develop. This moves me forward to become a Fullstack web developer,
-                          until then I would like to test myself in as many areas as possible.
-                          For this goal, I am willing to travel within the country or even between countries.
-                          The goal is to find a cooperative, understanding and friendly team with whom I can work.
-                          I don't shy away from the big corporate environment either.
-                          I would gladly work for smaller companies at the same time. Creative work is ideal for me,
-                          as in programming and in private life.
-                          I am also interested in IT security, so I do not rule it out
-                          the possibility of getting a job as an ethical hacker."]]
+       [:div.inner-text
+        [:div.text-separator "My ultimate ambition is to become a Fullstack web developer, and I am dedicated to continuously learning and growing in this field. 
+               Along the way, I am eager to explore diverse areas and challenge myself to broaden my skill set. 
+               I am open to traveling within my country or even internationally to pursue opportunities that align with my aspirations."]
+        [:div.text-separator "Finding a cooperative, understanding, and friendly team to collaborate with is paramount to me. 
+               While I am not averse to working in a large corporate environment, I am equally enthusiastic about contributing to smaller companies. 
+               I find immense satisfaction in creative work, both within the realm of programming and in my personal life."]
+        [:div.text-separator "Moreover, my interest in IT security is profound, and I remain open to the possibility of pursuing a career as an ethical hacker. 
+               This avenue offers an exciting prospect for me to utilize my skills and contribute to maintaining digital security."]
+        [:div "Overall, my goal is to continuously learn, develop, and embrace various professional avenues that align with my passions and potential."]]]
       [:div.page-button-container
        [:a.page-arrow {:href "/my-skills"}
         [:div.page-arrow-inner-container
@@ -334,14 +319,16 @@
      [:div.subpage-container
       [:div.subpage-card-title "MY HOBBIES"]
       [:div.subpage-card
-       [:div.inner-text "In addition to programming, I also deal with music. I write lyrics, compose music
-                          and I mix. I've been writing poems for about a decade, but I've only been writing lyrics for music for 3 years.
-                          In 2019, I played in a band as a bass guitarist and singer, and then independently
-                          I started my career as a hip-hop artist. I started mixing in 2022 and later
-                          also working with music composing softwares. Ableton is such an example. Hip-hop is not the only genre
-                          that keeps me engaged. The world of Drum and Bass showed me a new sound that is enough
-                          complex and energetic to always be able to show something new. At the moment I have two names,
-                          it's on soundcloud and youtube."]]
+       [:div.inner-text
+        [:div.text-separator "In addition to my passion for programming, I also have a deep involvement in music. For over a decade, I have been writing poems, and more recently, 
+               I have delved into writing lyrics for music. Within the past three years, I have focused on honing my skills in this area."]
+        [:div.text-separator "In 2019, I had the opportunity to showcase my musical talents as a bass guitarist and singer in a band. 
+               Following that experience, I embarked on an independent career as a hip-hop artist. 
+               I began exploring the art of music mixing in 2022, utilizing music composition software such as Ableton to enhance my sound. 
+               While hip-hop holds a special place in my heart, I find myself captivated by the intricate and energetic world of Drum and Bass. 
+               This genre presents me with the opportunity to continuously explore and present fresh and unique sounds."]
+        [:div "Currently, I operate under two names, which can be found on platforms such as SoundCloud and YouTube. 
+               These channels serve as outlets for sharing my musical creations with the world."]]]
       [:div.page-button-container
        [:a.page-arrow {:href "/my-goals"}
         [:div.page-arrow-inner-container
